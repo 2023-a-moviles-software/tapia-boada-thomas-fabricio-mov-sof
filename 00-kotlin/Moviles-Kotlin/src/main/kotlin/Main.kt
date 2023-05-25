@@ -1,4 +1,5 @@
 import java.util.*
+import kotlin.collections.ArrayList
 
 fun main(args: Array<String>) {
     println("Hello World!")
@@ -50,6 +51,18 @@ fun main(args: Array<String>) {
     calcularSueldo(10.00, 12.00, 20.00)
     calcularSueldo(10.00, bonoEspecial = 20.00)
     calcularSueldo(bonoEspecial = 20.00, sueldo = 10.00, tasa = 14.00)
+    val sumaUno = Suma(1,1)
+    val sumaDos = Suma(null, 1)
+    val sumaTres = Suma (1, null)
+    val sumaCuatro = Suma(null, null)
+    sumaUno.sumar()
+    sumaDos.sumar()
+    sumaTres.sumar()
+    sumaCuatro.sumar()
+    println(Suma.pi)
+    println(Suma.elevarAlCuadrado(2))
+    println(Suma.historialSumas)
+
 }
     //println(esSoltero)
     //println(coqueteo)
@@ -107,6 +120,61 @@ fun main(args: Array<String>) {
         }
     }
 
+    class Suma( //Constructor Primario Suma
+        unoParametro: Int, //Parametro
+        dosParametro: Int, //Parametro
+    ): Numeros(unoParametro,dosParametro) {// Extendiendo y mandando los parametros (super)
+
+        init { //Constructor primario
+            this.numeroUno
+            this.numeroDos
+        }
+        constructor( //Segundo constructor
+            uno : Int?, //Parametro
+            dos : Int,  //Parametro
+        ):this(
+            if (uno == null) 0 else uno, dos
+        )
+
+        constructor(// Segundo Constructor)
+            uno: Int,
+            dos: Int?,
+        ):this(
+            uno, if (dos == null) 0 else dos,
+        )
+
+        constructor(// Tercer Constructor
+            uno: Int?,
+            dos: Int?,
+        ):this(
+            if (uno == null) 0 else uno,
+            if (dos == null) 0 else dos,
+        )
+
+        public fun sumar(): Int{
+            val total = numeroUno + numeroDos
+            agregarHistorial(total)
+            return total
+        }
+
+        companion object { // Atributos y medoso "Compartidos" Singletons o Static de esta clase
+            // Todas las instancias de esta clase comparten estos atributos y metodos
+            //dentro del companion Object
+            val pi = 3.14
+
+            fun elevarAlCuadrado (num: Int) : Int{
+                return num * num
+            }
+
+            val historialSumas = ArrayList<Int>()
+            fun agregarHistorial(valorNuevaSuma: Int){
+                historialSumas.add(valorNuevaSuma)
+            }
+
+
+        }
+
+    }
 
     // Try adding program arguments via Run/Debug configuration.
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
