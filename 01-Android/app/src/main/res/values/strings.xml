@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MovilesSoftware2023A</string>
+    <string name="title_activity_aciclo_vida">ACicloVida</string>
+    <string name="title_activity_main2">MainActivity2</string>
 </resources>
