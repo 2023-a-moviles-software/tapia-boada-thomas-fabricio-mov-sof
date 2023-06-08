@@ -4,42 +4,71 @@ class Tienda (
     val ruc : Int,
     val telefono : Int,
     val propietario: String,
-    var frutas : ArrayList<Fruta>
+    var frutas : ArrayList<Fruta>,
+    var ventas : ArrayList<Double>,
+    var ventaActual : Double
 
-){
- init {
+) {
+    init {
         this.nombreTienda; this.direccion; this.ruc; this.telefono; this.propietario;this.frutas
-       print("Inicializando")
-  }
+    }
 
     constructor(
             nombreTienda: String,
             direccion: String,
-            ruc : Int,
+            ruc: Int,
             telefono: Int,
             propietario: String
 
     ) : this(
-        nombreTienda,
-        direccion,
-        ruc,
-        telefono,
-        propietario,
-        frutas = ArrayList<Fruta>()
+            nombreTienda,
+            direccion,
+            ruc,
+            telefono,
+            propietario,
+            frutas = ArrayList<Fruta>(),
+            ventas = ArrayList<Double>(),
+            ventaActual = 0.0
     )
 
 
-    fun añadirFruta(fruta: Fruta){
+    fun añadirFruta(fruta: Fruta) {
         this.frutas.add(fruta)
-        print(frutas)
     }
 
+    fun eliminarFruta(numeroFruta : Int) {
+            this.frutas.removeAt(numeroFruta-1).nombreFruta
+    }
+
+    fun añadirCantidadFruta(numeroFruta: Int, cantidad: Int){
+        if (cantidad > 0){
+            this.frutas.get(numeroFruta - 1).aumentarCantidad(cantidad)
+            println(this.frutas.get(numeroFruta - 1).cantidad)
+        } else {
+            println("No se puede gil")
+        }
+    }
+    fun comprarFruta(numeroFruta: Int, cantidad:Int){
+        if (this.frutas.get(numeroFruta-1).cantidad > 0 && cantidad <= this.frutas.get(numeroFruta-1).cantidad) {
+            var cantidadDisponible = this.frutas.get(numeroFruta - 1).disminuirCantidad(cantidad)
+            this.ventaActual = this.ventaActual + this.frutas.get(numeroFruta - 1).precio * cantidad
+        }
+        else {
+                println("Producto no Disponible")
+        }
+    }
+
+    fun finalizarCompra(){
+        this.ventas.add(ventaActual)
+        this.ventaActual = 0.0
+        println("Compra realizada con exito")
+    }
 }
 
 class Fruta(
         val nombreFruta: String,
         val precio: Double,
-        val cantidad: Int,
+        var cantidad: Int,
         var disponibilidad: Boolean,
         val familiaFruta: String
 ){
@@ -47,18 +76,28 @@ class Fruta(
       this.nombreFruta; this.precio; this.cantidad; this.familiaFruta; this.disponibilidad
   }
 
-//    constructor(
-//            nombre: String,
-//            precio: Double,
-//            cantidad : Int,
-//            familiaFruta : String,
-//    ) : this(
-//           nombre, precio, cantidad, familiaFruta,
-//    ){
-//        if (cantidad > 0){
-//            this.disponibilidad = true
-//        }
-//    }
+    constructor(
+            nombre: String,
+            precio: Double,
+            cantidad : Int,
+            familiaFruta : String,
+    ) : this(
+           nombre, precio, cantidad, disponibilidad = true, familiaFruta
+    ){
+        if (cantidad > 0){
+            this.disponibilidad = true
+        } else {
+            this.disponibilidad = false
+        }
+    }
+
+    fun disminuirCantidad(cantidad : Int){
+        this.cantidad = this.cantidad - cantidad
+    }
+
+    fun aumentarCantidad(cantidad : Int){
+        this.cantidad = this.cantidad + cantidad
+    }
 
 }
 
