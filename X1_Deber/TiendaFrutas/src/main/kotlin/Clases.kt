@@ -1,10 +1,10 @@
 class Tienda (
-    protected val nombreTienda : String,
-    protected val direccion : String,
-    protected val ruc : Int,
-    protected val telefono : Int,
-    protected val propietario: String,
-    protected var frutas : ArrayList<Fruta>?
+    val nombreTienda : String,
+    val direccion : String,
+    val ruc : Int,
+    val telefono : Int,
+    val propietario: String,
+    var frutas : ArrayList<Fruta>
 
 ){
  init {
@@ -19,36 +19,46 @@ class Tienda (
             telefono: Int,
             propietario: String
 
-    ) : this(nombreTienda, direccion, ruc, telefono, propietario)
+    ) : this(
+        nombreTienda,
+        direccion,
+        ruc,
+        telefono,
+        propietario,
+        frutas = ArrayList<Fruta>()
+    )
 
 
     fun añadirFruta(fruta: Fruta){
-        this.frutas?.add(fruta)
+        this.frutas.add(fruta)
         print(frutas)
     }
 
 }
 
 class Fruta(
-        protected val nombreFruta: String,
-        protected val precio: Double,
-        protected val cantidad: Int,
-        protected var disponibilidad: Boolean,
-        protected val familiaFruta: String
+        val nombreFruta: String,
+        val precio: Double,
+        val cantidad: Int,
+        var disponibilidad: Boolean,
+        val familiaFruta: String
 ){
   init {
       this.nombreFruta; this.precio; this.cantidad; this.familiaFruta; this.disponibilidad
   }
 
 //    constructor(
-//            //Segundo constructor
-//            nombre: String, //Parametro
-//            precio: Double,  //Parametro
+//            nombre: String,
+//            precio: Double,
 //            cantidad : Int,
 //            familiaFruta : String,
 //    ) : this(
-//           nombre, precio, cantidad, (if (cantidad > 0) this.disponibilidad = true else false) as Boolean, familiaFruta
-//    )
+//           nombre, precio, cantidad, familiaFruta,
+//    ){
+//        if (cantidad > 0){
+//            this.disponibilidad = true
+//        }
+//    }
 
 }
 
