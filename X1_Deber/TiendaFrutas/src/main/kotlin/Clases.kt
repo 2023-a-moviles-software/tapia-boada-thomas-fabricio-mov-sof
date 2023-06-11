@@ -63,6 +63,10 @@ class Tienda (
         this.ventaActual = 0.0
         println("Compra realizada con exito")
     }
+
+    override fun toString(): String {
+        return "Tienda(nombreTienda='$nombreTienda', direccion='$direccion', ruc=$ruc, telefono=$telefono, propietario='$propietario')"
+    }
 }
 
 class Fruta(
