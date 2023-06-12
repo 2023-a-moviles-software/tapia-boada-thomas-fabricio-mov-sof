@@ -84,16 +84,17 @@ fun main(args: Array<String>) {
                     println("*Comprar Frutas*")
                     println("*--Frutas--*")
                     var contadorFruta = 0
-                    tienda.frutas.forEach{ contadorFruta += 1;println( "$contadorFruta." + it.nombreFruta + " Cantidad: ${it.cantidad}") }
+                    tienda.frutas.forEach{ contadorFruta += 1;println( "$contadorFruta." + it.nombreFruta + " Cantidad: ${it.cantidad} Precio: ${it.precio}") }
                     println("*--------------*")
                     println("Número de Fruta para comprar: ")
                     var numeroFrutaComprar = input.nextLine().toInt()
                     println("Cantidad de Fruta para comprar: ")
                     var cantidadFrutaComprar = input.nextLine().toInt()
-                    tienda.comprarFruta(numeroFrutaComprar, cantidadFrutaComprar)
+                    var precioActual = tienda.comprarFruta(numeroFrutaComprar, cantidadFrutaComprar)
+                    println("Valor Actual de la Compra: $precioActual$ ")
                     println("Desea continuar: Y/N")
                     var respuesta = input.nextLine()
-                    if (respuesta.equals("N")){
+                    if (respuesta.equals("N") || respuesta.equals("n")){
                         salirCompra = true
                     }
                 }

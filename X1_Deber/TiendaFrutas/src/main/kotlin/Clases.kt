@@ -50,13 +50,14 @@ class Tienda (
             println("No se puede gil")
         }
     }
-    fun comprarFruta(numeroFruta: Int, cantidad:Int){
+    fun comprarFruta(numeroFruta: Int, cantidad:Int) : String{
         if (this.frutas.get(numeroFruta-1).cantidad > 0 && cantidad <= this.frutas.get(numeroFruta-1).cantidad) {
             var cantidadDisponible = this.frutas.get(numeroFruta - 1).disminuirCantidad(cantidad)
             this.ventaActual = this.ventaActual + this.frutas.get(numeroFruta - 1).precio * cantidad
+            return ventaActual.toString()
         }
         else {
-                println("Producto no Disponible")
+                return "Producto no Disponible"
         }
     }
 
