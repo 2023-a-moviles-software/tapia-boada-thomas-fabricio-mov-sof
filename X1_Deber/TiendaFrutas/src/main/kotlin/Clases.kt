@@ -42,12 +42,12 @@ class Tienda (
         return nombreFrutaEliminada
     }
 
-    fun añadirCantidadFruta(numeroFruta: Int, cantidad: Int){
+    fun añadirCantidadFruta(numeroFruta: Int, cantidad: Int) : String{
         if (cantidad > 0){
             this.frutas.get(numeroFruta - 1).aumentarCantidad(cantidad)
-            println(this.frutas.get(numeroFruta - 1).cantidad)
+            return "Se agrego $cantidad de ${frutas.get(numeroFruta-1).nombreFruta} "
         } else {
-            println("No se puede gil")
+            return "El valor no es permitido"
         }
     }
     fun comprarFruta(numeroFruta: Int, cantidad:Int) : String{

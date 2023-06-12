@@ -75,8 +75,8 @@ fun main(args: Array<String>) {
                 var frutaAñadir = input.nextLine().toInt()
                 println("Cantidad a añadir: ")
                 var cantidadAñadir = input.nextLine().toInt()
-                val nombreFrutaCantidad = tienda.añadirCantidadFruta(frutaAñadir,cantidadAñadir)
-                println("Se agrego la fruta $nombreFrutaCantidad con exito")
+                val añadirFrutas = tienda.añadirCantidadFruta(frutaAñadir,cantidadAñadir)
+                println(añadirFrutas)
             }
             5 -> {
                 var salirCompra = false
