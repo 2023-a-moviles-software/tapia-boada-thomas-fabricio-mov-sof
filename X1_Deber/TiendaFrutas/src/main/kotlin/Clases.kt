@@ -1,7 +1,7 @@
 class Tienda (
     val nombreTienda : String,
     val direccion : String,
-    val ruc : Int,
+    val ruc : String,
     val telefono : Int,
     val propietario: String,
     var frutas : ArrayList<Fruta>,
@@ -16,7 +16,7 @@ class Tienda (
     constructor(
             nombreTienda: String,
             direccion: String,
-            ruc: Int,
+            ruc: String,
             telefono: Int,
             propietario: String
 
@@ -36,8 +36,10 @@ class Tienda (
         this.frutas.add(fruta)
     }
 
-    fun eliminarFruta(numeroFruta : Int) {
-            this.frutas.removeAt(numeroFruta-1).nombreFruta
+    fun eliminarFruta(numeroFruta : Int): String {
+            val nombreFrutaEliminada = this.frutas.get(numeroFruta-1).nombreFruta
+            this.frutas.removeAt(numeroFruta-1)
+        return nombreFrutaEliminada
     }
 
     fun añadirCantidadFruta(numeroFruta: Int, cantidad: Int){
@@ -58,10 +60,12 @@ class Tienda (
         }
     }
 
-    fun finalizarCompra(){
+    fun finalizarCompra() : Double{
         this.ventas.add(ventaActual)
+        var venta = ventaActual
         this.ventaActual = 0.0
         println("Compra realizada con exito")
+        return venta
     }
 
     override fun toString(): String {
