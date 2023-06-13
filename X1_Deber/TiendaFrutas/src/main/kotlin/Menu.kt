@@ -21,6 +21,7 @@ fun main(args: Array<String>) {
 
     try{
         tienda = Json.decodeFromString(File("resources/tiendita.json").readText())
+        nombre = tienda?.nombreTienda
 
     }
     catch (e : FileNotFoundException){
