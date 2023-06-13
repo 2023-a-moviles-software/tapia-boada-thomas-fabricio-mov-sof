@@ -1,6 +1,9 @@
-
+import java.io.File;
 import java.util.Scanner;
 fun main(args: Array<String>) {
+
+    val ruta = "/resources/txt/datos.txt"
+    val archivo = File(ruta)
 
     //Variable de opciones
     var opcion : Int
@@ -18,6 +21,7 @@ fun main(args: Array<String>) {
     println("Ingrese el nombre del propietario: ")
     val nombrePropietario = input.nextLine()
     val tienda = Tienda(nombre, ubicacion, RUC, telefono, nombrePropietario)
+    archivo.writeText("Nombre Tienda: $")
 
     fun menu() {
         println("*" + nombre + "*")
