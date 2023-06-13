@@ -1,7 +1,9 @@
 
 import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import java.io.File
+import java.io.FileNotFoundException
 import java.util.*
 fun main(args: Array<String>) {
 
@@ -19,8 +21,9 @@ fun main(args: Array<String>) {
 
     try{
         tienda = Json.decodeFromString(File("resources/tiendita.json").readText())
+
     }
-    catch (e : Exception){
+    catch (e : FileNotFoundException){
         println("Ingrese el nombre de la tienda: ")
         nombre = input.nextLine()
         println("Ingrese la ubicacion de la tienda: ")
@@ -46,11 +49,13 @@ fun main(args: Array<String>) {
         println("4. Añadir Cantidad de Fruta")
         println("5. Realizar Compra")
         println("0. Salir")
+
     }
 
 
     while (!salir){
         menu()
+        File("resources/tiendita.json").writeText(Json.encodeToString(tienda));
         opcion = input.nextLine().toInt()
         when (opcion){
             1 -> {
