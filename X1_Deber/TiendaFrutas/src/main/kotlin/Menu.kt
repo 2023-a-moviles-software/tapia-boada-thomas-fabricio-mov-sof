@@ -11,7 +11,6 @@ fun main(args: Array<String>) {
     var opcion : Int
     var salir = false
     val input = Scanner(System.`in`) //Scanner datos por consola
-    var ejecutar = false
     var tienda:Tienda? = null
     var nombre : String? = null
     var ubicacion : String? = null
@@ -78,7 +77,7 @@ fun main(args: Array<String>) {
             2 -> {
                 println("*Mostrar Frutas*")
                 if (tienda != null) {
-                    tienda.frutas.forEach { println(it.nombreFruta + " Cantidad: ${it.cantidad}") }
+                    tienda.frutas.forEach { println(it.nombreFruta + " Cantidad: ${it.cantidad}" + " Disponibilidad: ${it.disponibilidad}") }
                 }
                 println("*--------------*")
             }
@@ -100,7 +99,7 @@ fun main(args: Array<String>) {
                 println("*--Frutas--*")
                 var contadorFruta = 0
                 if (tienda != null) {
-                    tienda.frutas.forEach{ contadorFruta += 1;println( "$contadorFruta." + it.nombreFruta + " Cantidad: ${it.cantidad}") }
+                    tienda.frutas.forEach{ contadorFruta += 1;println( "$contadorFruta." + it.nombreFruta + " Cantidad: ${it.cantidad}" + " Disponibilidad: ${it.disponibilidad}") }
                 }
                 println("*--------------*")
                 println("Número de la fruta a añadir cantidad: ")
@@ -117,7 +116,7 @@ fun main(args: Array<String>) {
                     println("*--Frutas--*")
                     var contadorFruta = 0
                     if (tienda != null) {
-                        tienda.frutas.forEach{ contadorFruta += 1;println( "$contadorFruta." + it.nombreFruta + " Cantidad: ${it.cantidad} Precio: ${it.precio}") }
+                        tienda.frutas.forEach{ contadorFruta += 1;println( "$contadorFruta." + it.nombreFruta + " Cantidad: ${it.cantidad} Precio: ${it.precio}" + " Disponibilidad: ${it.disponibilidad}") }
                     }
                     println("*--------------*")
                     println("Número de Fruta para comprar: ")
