@@ -1,7 +1,8 @@
+
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
-import java.io.File;
-import java.util.Scanner;
+import java.io.File
+import java.util.*
 fun main(args: Array<String>) {
 
     //Variable de opciones
@@ -63,36 +64,44 @@ fun main(args: Array<String>) {
                 println("Familia Fruta: ")
                 var familiaFruta = input.nextLine()
                 var fruta = Fruta(nombreFruta, precioFruta, cantidadFruta, familiaFruta)
-                tienda.añadirFruta(fruta)
+                if (tienda != null) {
+                    tienda.añadirFruta(fruta)
+                }
                 println("*Se añadio fruta con exito*")
             }
             2 -> {
                 println("*Mostrar Frutas*")
-                tienda.frutas.forEach { println(it.nombreFruta + " Cantidad: ${it.cantidad}") }
+                if (tienda != null) {
+                    tienda.frutas.forEach { println(it.nombreFruta + " Cantidad: ${it.cantidad}") }
+                }
                 println("*--------------*")
             }
             3 -> {
                 println("*Eliminar Fruta*")
                 println("*--Frutas--*")
                 var contadorFruta = 0
-                tienda.frutas.forEach{ contadorFruta += 1;println( "$contadorFruta." + it.nombreFruta) }
+                if (tienda != null) {
+                    tienda.frutas.forEach{ contadorFruta += 1;println( "$contadorFruta." + it.nombreFruta) }
+                }
                 println("*--------------*")
                 println("Número de la fruta a eliminar: ")
                 var frutaEliminar = input.nextLine().toInt()
-                val nombreFrutaEliminada = tienda.eliminarFruta(frutaEliminar)
+                val nombreFrutaEliminada = tienda?.eliminarFruta(frutaEliminar)
                 println("Se elimino la fruta $nombreFrutaEliminada con exito")
             }
             4 -> {
                 println("*Añadir Cantidad Fruta*")
                 println("*--Frutas--*")
                 var contadorFruta = 0
-                tienda.frutas.forEach{ contadorFruta += 1;println( "$contadorFruta." + it.nombreFruta + " Cantidad: ${it.cantidad}") }
+                if (tienda != null) {
+                    tienda.frutas.forEach{ contadorFruta += 1;println( "$contadorFruta." + it.nombreFruta + " Cantidad: ${it.cantidad}") }
+                }
                 println("*--------------*")
                 println("Número de la fruta a añadir cantidad: ")
                 var frutaAñadir = input.nextLine().toInt()
                 println("Cantidad a añadir: ")
                 var cantidadAñadir = input.nextLine().toInt()
-                val añadirFrutas = tienda.añadirCantidadFruta(frutaAñadir,cantidadAñadir)
+                val añadirFrutas = tienda?.añadirCantidadFruta(frutaAñadir,cantidadAñadir)
                 println(añadirFrutas)
             }
             5 -> {
@@ -101,13 +110,15 @@ fun main(args: Array<String>) {
                     println("*Comprar Frutas*")
                     println("*--Frutas--*")
                     var contadorFruta = 0
-                    tienda.frutas.forEach{ contadorFruta += 1;println( "$contadorFruta." + it.nombreFruta + " Cantidad: ${it.cantidad} Precio: ${it.precio}") }
+                    if (tienda != null) {
+                        tienda.frutas.forEach{ contadorFruta += 1;println( "$contadorFruta." + it.nombreFruta + " Cantidad: ${it.cantidad} Precio: ${it.precio}") }
+                    }
                     println("*--------------*")
                     println("Número de Fruta para comprar: ")
                     var numeroFrutaComprar = input.nextLine().toInt()
                     println("Cantidad de Fruta para comprar: ")
                     var cantidadFrutaComprar = input.nextLine().toInt()
-                    var precioActual = tienda.comprarFruta(numeroFrutaComprar, cantidadFrutaComprar)
+                    var precioActual = tienda?.comprarFruta(numeroFrutaComprar, cantidadFrutaComprar)
                     println("Valor Actual de la Compra: $precioActual$ ")
                     println("Desea continuar: Y/N")
                     var respuesta = input.nextLine()
@@ -115,7 +126,7 @@ fun main(args: Array<String>) {
                         salirCompra = true
                     }
                 }
-                var totalVenta = tienda.finalizarCompra()
+                var totalVenta = tienda?.finalizarCompra()
                 println("El valor total es de: $totalVenta$")
             }
             0 -> {
