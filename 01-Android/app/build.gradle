@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace 'com.example.movilessoftware2023a'
-    compileSdk 24
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.movilessoftware2023a"
@@ -38,7 +38,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.3.2'
+        kotlinCompilerExtensionVersion '1.4.5'
     }
     packagingOptions {
         resources {
