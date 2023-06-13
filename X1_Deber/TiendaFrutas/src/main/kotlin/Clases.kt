@@ -37,27 +37,38 @@ class Tienda (
     }
 
     fun eliminarFruta(numeroFruta : Int): String {
-            val nombreFrutaEliminada = this.frutas.get(numeroFruta-1).nombreFruta
-            this.frutas.removeAt(numeroFruta-1)
-        return nombreFrutaEliminada
+        if (numeroFruta >= frutas.size) {
+            val nombreFrutaEliminada = this.frutas.get(numeroFruta - 1).nombreFruta
+            this.frutas.removeAt(numeroFruta - 1)
+            return nombreFrutaEliminada
+        } else {
+            return "Número de Fruta no valido"
+        }
     }
 
     fun añadirCantidadFruta(numeroFruta: Int, cantidad: Int) : String{
-        if (cantidad > 0){
-            this.frutas.get(numeroFruta - 1).aumentarCantidad(cantidad)
-            return "Se agrego $cantidad de ${frutas.get(numeroFruta-1).nombreFruta} "
+        if (numeroFruta >= frutas.size) {
+            if (cantidad > 0) {
+                this.frutas.get(numeroFruta - 1).aumentarCantidad(cantidad)
+                return "Se agrego $cantidad de ${frutas.get(numeroFruta - 1).nombreFruta} "
+            } else {
+                return "El valor no es permitido"
+            }
         } else {
-            return "El valor no es permitido"
+            return "Número de Fruta no valido"
         }
     }
     fun comprarFruta(numeroFruta: Int, cantidad:Int) : String{
-        if (this.frutas.get(numeroFruta-1).cantidad > 0 && cantidad <= this.frutas.get(numeroFruta-1).cantidad) {
-            var cantidadDisponible = this.frutas.get(numeroFruta - 1).disminuirCantidad(cantidad)
-            this.ventaActual = this.ventaActual + this.frutas.get(numeroFruta - 1).precio * cantidad
-            return ventaActual.toString()
-        }
-        else {
+        if (numeroFruta >= frutas.size) {
+            if (this.frutas.get(numeroFruta - 1).cantidad > 0 && cantidad <= this.frutas.get(numeroFruta - 1).cantidad) {
+                var cantidadDisponible = this.frutas.get(numeroFruta - 1).disminuirCantidad(cantidad)
+                this.ventaActual = this.ventaActual + this.frutas.get(numeroFruta - 1).precio * cantidad
+                return ventaActual.toString()
+            } else {
                 return "Producto no Disponible"
+            }
+        } else {
+            return "Número de Fruta no valido"
         }
     }
 

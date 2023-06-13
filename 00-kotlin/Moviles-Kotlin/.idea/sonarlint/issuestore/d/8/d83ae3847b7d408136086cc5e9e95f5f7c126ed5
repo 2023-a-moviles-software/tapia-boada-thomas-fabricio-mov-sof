@@ -1,0 +1,14 @@
+
+Jkotlin:S1172"-Remove this unused function parameter "args".(¥å¥ûÿÿÿÿ
+Xkotlin:S6615";Remove this variable, which is assigned but never accessed.(«Ôãäøÿÿÿÿ
+Ckotlin:S6615"&The value assigned here is never used.(Ëùõ¸ùÿÿÿÿ
+7kotlin:S125œ"Remove this commented out code.(¨Šüı
+Ekotlin:S14810"-Remove this unused "coqueteo" local variable.(Üç¨Ó
+Qkotlin:S1481"4Remove this unused "fechaNacimiento" local variable.(‡şòüÿÿÿÿ
+Fkotlin:S1481".Remove this unused "mayorEdad" local variable.(…úÆø
+Gkotlin:S1481"0Remove this unused "estadoCivil" local variable.(Îëù
+Hkotlin:S1481"+Remove this unused "sueldo" local variable.(µˆ¸şÿÿÿÿ
+Pkotlin:S1481"3Remove this unused "nombreProfesor" local variable.(¹¹¦ùÿÿÿÿ
+Hkotlin:S1481"0Remove this unused "edadEjemplo" local variable.(³ÕŸß
+Fkotlin:S1481".Remove this unused "inmutable" local variable.(ğØ»†
+Zkotlin:S6510®"AMove "return" statements from all branches before "if" statement.(Ÿ¥“å
