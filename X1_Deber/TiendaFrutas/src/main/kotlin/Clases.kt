@@ -1,3 +1,5 @@
+import kotlinx.serialization.Serializable
+@Serializable
 class Tienda (
     val nombreTienda : String,
     val direccion : String,
@@ -85,6 +87,7 @@ class Tienda (
     }
 }
 
+@Serializable
 class Fruta(
         val nombreFruta: String,
         val precio: Double,

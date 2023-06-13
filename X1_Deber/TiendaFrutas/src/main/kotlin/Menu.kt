@@ -1,27 +1,33 @@
+import kotlinx.serialization.json.Json
 import java.io.File;
 import java.util.Scanner;
 fun main(args: Array<String>) {
-
-    val ruta = "/resources/txt/datos.txt"
-    val archivo = File(ruta)
 
     //Variable de opciones
     var opcion : Int
     var salir = false
     val input = Scanner(System.`in`) //Scanner datos por consola
+    var ejecutar = false
+    var tienda:Tienda? = null;
+    try{
+        tienda = Json.decodeFromString(File("tiendita.json").readText())
+    }
+    catch (){
+        println("Ingrese el nombre de la tienda: ")
+        val nombre = input.nextLine()
+        println("Ingrese la ubicacion de la tienda: ")
+        val ubicacion = input.nextLine()
+        println("Ingrese el RUC: ")
+        val RUC = input.nextLine()
+        println("Ingrese el telefono: ")
+        val telefono = input.nextLine().toInt()
+        println("Ingrese el nombre del propietario: ")
+        val nombrePropietario = input.nextLine()
+        tienda = Tienda(nombre, ubicacion, RUC, telefono, nombrePropietario)
+    }
 
-    println("Ingrese el nombre de la tienda: ")
-    val nombre = input.nextLine()
-    println("Ingrese la ubicacion de la tienda: ")
-    val ubicacion = input.nextLine()
-    println("Ingrese el RUC: ")
-    val RUC = input.nextLine()
-    println("Ingrese el telefono: ")
-    val telefono = input.nextLine().toInt()
-    println("Ingrese el nombre del propietario: ")
-    val nombrePropietario = input.nextLine()
-    val tienda = Tienda(nombre, ubicacion, RUC, telefono, nombrePropietario)
-    archivo.writeText("Nombre Tienda: $")
+
+
 
     fun menu() {
         println("*" + nombre + "*")
