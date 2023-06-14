@@ -16,21 +16,21 @@ class Tienda (
     }
 
     constructor(
-            nombreTienda: String,
-            direccion: String,
-            ruc: String,
-            telefono: Int,
-            propietario: String
+        nombreTienda: String,
+        direccion: String,
+        ruc: String,
+        telefono: Int,
+        propietario: String
 
     ) : this(
-            nombreTienda,
-            direccion,
-            ruc,
-            telefono,
-            propietario,
-            frutas = ArrayList<Fruta>(),
-            ventas = ArrayList<Double>(),
-            ventaActual = 0.0
+        nombreTienda,
+        direccion,
+        ruc,
+        telefono,
+        propietario,
+        frutas = ArrayList<Fruta>(),
+        ventas = ArrayList<Double>(),
+        ventaActual = 0.0
     )
 
 
@@ -86,41 +86,3 @@ class Tienda (
         return "Tienda(nombreTienda='$nombreTienda', direccion='$direccion', ruc=$ruc, telefono=$telefono, propietario='$propietario')"
     }
 }
-
-@Serializable
-class Fruta(
-        val nombreFruta: String,
-        val precio: Double,
-        var cantidad: Int,
-        var disponibilidad: Boolean,
-        val familiaFruta: String
-){
-  init {
-      this.nombreFruta; this.precio; this.cantidad; this.familiaFruta; this.disponibilidad
-  }
-
-    constructor(
-            nombre: String,
-            precio: Double,
-            cantidad : Int,
-            familiaFruta : String,
-    ) : this(
-           nombre, precio, cantidad, disponibilidad = true, familiaFruta
-    ){
-        if (cantidad > 0){
-            this.disponibilidad = true
-        } else {
-            this.disponibilidad = false
-        }
-    }
-
-    fun disminuirCantidad(cantidad : Int){
-        this.cantidad = this.cantidad - cantidad
-    }
-
-    fun aumentarCantidad(cantidad : Int){
-        this.cantidad = this.cantidad + cantidad
-    }
-
-}
-
