@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
             R.id.btn_ciclo_vida
         )
     botonCicloVida.setOnClickListener{
-            irActividad(ACicloVida::class.java)
+            irActividad(AACicloVida::class.java)
         }
     }
     fun irActividad(
