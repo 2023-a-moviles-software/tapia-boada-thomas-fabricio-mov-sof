@@ -1,0 +1,12 @@
+
+Qkotlin:S1172"-Remove this unused function parameter "args".(¥å¥ûÿÿÿÿ8×º£ÚŠ1
+Bkotlin:S125p"Remove this commented out code.(ø°ÌÍûÿÿÿÿ8¸‚»ÚŠ1
+Bkotlin:S125~"Remove this commented out code.(Š…á¤ùÿÿÿÿ8¸‚»ÚŠ1
+qkotlin:S117"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ü„Ü8Ûº£ÚŠ1
+vkotlin:S117K"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(½Ñ®ëûÿÿÿÿ8Ôà¡“‹1
+qkotlin:S117M"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(”ˆ¦–8Ôà¡“‹1
+vkotlin:S117N"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(”İò˜úÿÿÿÿ8Õà¡“‹1
+pkotlin:S11927"QDefine a constant instead of duplicating this literal "*--------------*" 4 times.(³ÄÔª8Şà¡“‹1
+lkotlin:S1192;"MDefine a constant instead of duplicating this literal "*--Frutas--*" 3 times.(÷’ß 8ßà¡“‹1
+Jkotlin:S6519a"+Replace "equals" with binary operator "==".(’¬¼Å8ãà¡“‹1
+Jkotlin:S6519a"+Replace "equals" with binary operator "==".(’¬¼Å8ãà¡“‹1

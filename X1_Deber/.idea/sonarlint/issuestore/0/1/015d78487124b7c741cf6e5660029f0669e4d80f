@@ -1,0 +1,15 @@
+
+[kotlin:S1481@"7Remove this unused "cantidadDisponible" local variable.(º¦»ùÿÿÿÿ8÷ù¼“‹1
+rkotlin:S100#"URename function "aÃ±adirFruta" to match the regular expression ^[a-zA-Z][a-zA-Z0-9]*$(–ø²r8ùù¼“‹1
+{kotlin:S1001"]Rename function "aÃ±adirCantidadFruta" to match the regular expression ^[a-zA-Z][a-zA-Z0-9]*$(‹™8ùù¼“‹1
+zkotlin:S1192-"[Define a constant instead of duplicating this literal "NÃºmero de Fruta no valido" 3 times.(„‚äµ8ëœ¿“‹1
+ekotlin:S6510("AMove "return" statements from all branches before "if" statement.(Áï—ıÿÿÿÿ8úù¼“‹1
+`kotlin:S65103"AMove "return" statements from all branches before "if" statement.(™İÃù8úù¼“‹1
+`kotlin:S6510?"AMove "return" statements from all branches before "if" statement.(ÿåìî8îœ¿“‹1
+Jkotlin:S6518)",Replace function call with indexed accessor.(‡ÜòH8ûù¼“‹1
+Kkotlin:S65184",Replace function call with indexed accessor.(©‹¨±8ûù¼“‹1
+Kkotlin:S6518?",Replace function call with indexed accessor.(ÿåìî8ûù¼“‹1
+Kkotlin:S6518?",Replace function call with indexed accessor.(ÿåìî8ûù¼“‹1
+Pkotlin:S6518@",Replace function call with indexed accessor.(º¦»ùÿÿÿÿ8ûù¼“‹1
+Pkotlin:S65185",Replace function call with indexed accessor.(™¨•ùÿÿÿÿ8ûù¼“‹1
+Pkotlin:S6518A",Replace function call with indexed accessor.(ãØóµüÿÿÿÿ8ûù¼“‹1
