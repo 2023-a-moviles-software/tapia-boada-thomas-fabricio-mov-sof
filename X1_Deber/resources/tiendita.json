@@ -1,1 +1,1 @@
-{"nombreTienda":"Tienda Thomas","direccion":"Quito","ruc":"1724443294001","telefono":983359387,"propietario":"Thomas Tapia","frutas":[],"ventas":[],"ventaActual":0.0}
+{"nombreTienda":"Tiendita","direccion":"Quito","ruc":"1724443294001","telefono":983359387,"propietario":"Thomas Tapia","frutas":[{"nombreFruta":"Pera","precio":0.2,"cantidad":31,"disponibilidad":true,"familiaFruta":"Pera"}],"ventas":[0.8],"ventaActual":0.0}
