@@ -1,1 +1,1 @@
-{"nombreTienda":"Tiendita","direccion":"Quito","ruc":"1724443294001","telefono":983359387,"propietario":"Thomas Tapia","frutas":[{"nombreFruta":"Manzana","precio":0.2,"cantidad":30,"disponibilidad":true,"familiaFruta":"Manzana"}],"ventas":[],"ventaActual":0.0}
+{"nombreTienda":"Tiendita","direccion":"Quito","ruc":"1724443294001","telefono":983359387,"propietario":"Thomas Tapia","frutas":[{"nombreFruta":"Manzana","precio":0.2,"cantidad":50,"disponibilidad":true,"familiaFruta":"Manzana"}],"ventas":[],"ventaActual":0.0}

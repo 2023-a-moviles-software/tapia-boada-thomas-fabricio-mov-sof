@@ -39,7 +39,7 @@ class Tienda (
     }
 
     fun eliminarFruta(numeroFruta : Int): String {
-        if (numeroFruta >= frutas.size) {
+        if (numeroFruta >= frutas.size || numeroFruta > 0) {
             val nombreFrutaEliminada = this.frutas.get(numeroFruta - 1).nombreFruta
             this.frutas.removeAt(numeroFruta - 1)
             return nombreFrutaEliminada
