@@ -1,5 +1,6 @@
 package com.example.movilessoftware2023a
 
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ContextMenu
@@ -9,6 +10,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
+import androidx.appcompat.app.AlertDialog
 
 class BListView : AppCompatActivity() {
     val arreglo = BBaseDatosMemoria.arregloBEntrenador
@@ -40,6 +42,7 @@ class BListView : AppCompatActivity() {
             }
 
             R.id.mi_eliminar -> {
+                abrirDialogo()
                 "Hacer algo con ${idItemSeleccionado}"
                 return false
             }
@@ -71,6 +74,37 @@ class BListView : AppCompatActivity() {
             BEntrenador(4, "Dorys", "d@d.com")
         )
         adaptador.notifyDataSetChanged()
+    }
+
+    fun abrirDialogo(){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Desea Eliminar")
+        builder.setPositiveButton(
+            "Aceptar",
+            DialogInterface.OnClickListener{ //Callback
+                dialog, which -> //Alguna cosa
+            }
+        )
+        builder.setNegativeButton("Cancelar", null)
+        val opciones = resources.getStringArray(
+            R.array.string_array_opciones_dialogo
+        )
+        val seleccionPrevia = booleanArrayOf(
+            true, //Lunes seleccionado
+            false, //Martes NO seleccionado
+            false //Miercoles NO seleccionado
+        )
+
+        builder.setMultiChoiceItems(
+            opciones,
+            seleccionPrevia,
+            {
+             dialog, which, isChecked ->
+             "Dio clic en ele item ${which}"
+            }
+        )
+        val dialogo= builder.create()
+        dialogo.show()
     }
 }
 
