@@ -1,0 +1,17 @@
+
+Jkotlin:S1172"-Remove this unused function parameter "args".(¥å¥ûÿÿÿÿ
+8kotlin:S6615" Remove this useless initializer.(£¯çÃ
+=kotlin:S6615" Remove this useless initializer.(¹Ğïüúÿÿÿÿ
+=kotlin:S6615" Remove this useless initializer.(ÌşÛåÿÿÿÿÿ
+8kotlin:S6615" Remove this useless initializer.(˜¿…‰
+=kotlin:S6615" Remove this useless initializer.(µä¶ºıÿÿÿÿ
+=kotlin:S6615" Remove this useless initializer.(µ»Åüÿÿÿÿ
+okotlin:S117"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ÌşÛåÿÿÿÿÿ
+okotlin:S117i"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(½Ñ®ëûÿÿÿÿ
+jkotlin:S117k"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(”ˆ¦–
+okotlin:S117l"SRename this local variable to match the regular expression ^`?[_a-z][a-zA-Z0-9]*`?$(ÛÕù“şÿÿÿÿ
+ikotlin:S1192Q"QDefine a constant instead of duplicating this literal "*--------------*" 4 times.(³ÄÔª
+ekotlin:S1192U"MDefine a constant instead of duplicating this literal "*--Frutas--*" 3 times.(÷’ß 
+okotlin:S3776"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(¥å¥ûÿÿÿÿ
+Dkotlin:S6519"+Replace "equals" with binary operator "==".(’¬¼Å
+Dkotlin:S6519"+Replace "equals" with binary operator "==".(’¬¼Å
