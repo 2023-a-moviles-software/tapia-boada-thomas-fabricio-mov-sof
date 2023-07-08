@@ -1,35 +1,33 @@
 package com.example.examen01
-import kotlinx.serialization.Serializable
 
-@Serializable
+
 class Tienda (
 
-    val nombreTienda : String,
-    val direccion : String,
-    val ruc : String,
-    val telefono : Int,
-    val propietario: String,
+    var id : Int,
+    var nombreTienda : String,
+    var direccion : String,
+    var ruc : String,
+    var propietario: String,
     var frutas : ArrayList<Fruta>,
     var ventas : ArrayList<Double>,
     var ventaActual : Double
 
     ) {
         init {
-            this.nombreTienda; this.direccion; this.ruc; this.telefono; this.propietario;this.frutas
+            this.nombreTienda; this.direccion; this.ruc; this.id; this.propietario;this.frutas
         }
 
         constructor(
             nombreTienda: String,
             direccion: String,
             ruc: String,
-            telefono: Int,
             propietario: String
 
         ) : this(
+            id = 0,
         nombreTienda,
         direccion,
         ruc,
-        telefono,
         propietario,
         frutas = ArrayList<Fruta>(),
         ventas = ArrayList<Double>(),
@@ -86,6 +84,8 @@ class Tienda (
         }
 
         override fun toString(): String {
-            return "Tienda(nombreTienda='$nombreTienda', direccion='$direccion', ruc=$ruc, telefono=$telefono, propietario='$propietario')"
+            return "Tienda(nombreTienda='$nombreTienda', direccion='$direccion', ruc=$ruc, id=$id, propietario='$propietario')"
         }
+
+
 }

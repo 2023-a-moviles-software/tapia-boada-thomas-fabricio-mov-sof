@@ -1,14 +1,13 @@
 
 package com.example.examen01
-import kotlinx.serialization.Serializable
 
-@Serializable
+
 class Fruta (    val nombreFruta: String,
                  val precio: Double,
                  var cantidad: Int,
                  var disponibilidad: Boolean,
                  val familiaFruta: String
-){
+) {
     init {
         this.nombreFruta; this.precio; this.cantidad; this.familiaFruta; this.disponibilidad
     }

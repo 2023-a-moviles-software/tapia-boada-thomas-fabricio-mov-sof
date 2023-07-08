@@ -7,7 +7,7 @@
     tools:context=".NuevaTienda">
 
     <TextView
-        android:id="@+id/tv_nombreTienda"
+        android:id="@+id/tv_EditNombreTienda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nombre Tienda"
@@ -28,11 +28,11 @@
         android:ems="10"
         android:hint="Nombre Tienda"
         android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_nombreTienda"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_EditNombreTienda"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.083"
-        app:layout_constraintStart_toEndOf="@+id/tv_nombreTienda"
-        app:layout_constraintTop_toTopOf="@+id/tv_nombreTienda"
+        app:layout_constraintStart_toEndOf="@+id/tv_EditNombreTienda"
+        app:layout_constraintTop_toTopOf="@+id/tv_EditNombreTienda"
         app:layout_constraintVertical_bias="0.423" />
 
     <TextView
@@ -43,7 +43,7 @@
         android:layout_marginTop="48dp"
         android:text="Dirección"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nombreTienda" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_EditNombreTienda" />
 
     <EditText
         android:id="@+id/txt_direccion"
@@ -86,39 +86,14 @@
         app:layout_constraintVertical_bias="0.653" />
 
     <TextView
-        android:id="@+id/tv_numero"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="44dp"
-        android:text="Número"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_ruc" />
-
-    <EditText
-        android:id="@+id/txt_numero"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:ems="10"
-        android:hint="Número"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_numero"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.014"
-        app:layout_constraintStart_toEndOf="@+id/tv_numero"
-        app:layout_constraintTop_toTopOf="@+id/tv_numero"
-        app:layout_constraintVertical_bias="0.615" />
-
-    <TextView
         android:id="@+id/tv_propietario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="48dp"
         android:text="Propietario"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_numero" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_ruc" />
 
     <EditText
         android:id="@+id/txt_propietario"

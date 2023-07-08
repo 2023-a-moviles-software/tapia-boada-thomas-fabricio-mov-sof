@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     var propietario : String = ""
     var adaptador : ArrayAdapter<Tienda>? = null
     var listView : ListView? = null
+    lateinit var db : BaseDatosHelper
 
     val callbackCreacionTienda =
         registerForActivityResult(
@@ -51,6 +52,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        db = BaseDatosHelper(this)
+
+
         listView = findViewById<ListView>(R.id.lv_tiendas)
         adaptador = ArrayAdapter(
             this, // contexto
@@ -61,9 +65,10 @@ class MainActivity : AppCompatActivity() {
         adaptador!!.notifyDataSetChanged()
         val botonAñadirTienda = findViewById<Button>(R.id.btn_crear)
         botonAñadirTienda.setOnClickListener{
-            callbackCreacionTienda
-                .launch(Intent(this, NuevaTienda::class.java))
-            adaptador!!.notifyDataSetChanged()
+           irActividad(NuevaTienda::class.java)
+//            arrayTiendas = BaseDatos.tablaTiendas!!.mostrarDatos()!!
+//            adaptador!!.notifyDataSetChanged()
+
         }
         registerForContextMenu(listView)
     }
@@ -76,7 +81,7 @@ class MainActivity : AppCompatActivity() {
 
 
     fun añadirTienda(adaptador: ArrayList<Tienda>){
-        arrayTiendas.add(Tienda(nombreTienda,direccion, RUC ,numero,propietario))
+        arrayTiendas.add(Tienda(nombreTienda,direccion, RUC ,propietario))
     }
 
     fun eliminarTienda(adaptador: ArrayList<Tienda>){
