@@ -1,9 +1,11 @@
 package com.example.examen01
 
 import android.app.Activity
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.ContextMenu
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
@@ -11,6 +13,7 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -22,8 +25,10 @@ class MainActivity : AppCompatActivity() {
     var RUC : String = ""
     var numero : Int = 0
     var propietario : String = ""
+    var adaptador : ArrayAdapter<Tienda>? = null
+    var listView : ListView? = null
 
-    val callbackContenidoIntentExplicito =
+    val callbackCreacionTienda =
         registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ){
@@ -46,40 +51,40 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val listView = findViewById<ListView>(R.id.lv_tiendas)
-        val adaptador = ArrayAdapter(
+        listView = findViewById<ListView>(R.id.lv_tiendas)
+        adaptador = ArrayAdapter(
             this, // contexto
             android.R.layout.simple_list_item_1, //layout.xml que se va a usar
             arrayTiendas
         )
-        listView.adapter = adaptador
-        adaptador.notifyDataSetChanged()
+        listView!!.adapter = adaptador
+        adaptador!!.notifyDataSetChanged()
         val botonAñadirTienda = findViewById<Button>(R.id.btn_crear)
         botonAñadirTienda.setOnClickListener{
-            callbackContenidoIntentExplicito
+            callbackCreacionTienda
                 .launch(Intent(this, NuevaTienda::class.java))
-            adaptador.notifyDataSetChanged()
+            adaptador!!.notifyDataSetChanged()
         }
         registerForContextMenu(listView)
     }
 
     override fun onResume() {
         super.onResume()
-        val listView = findViewById<ListView>(R.id.lv_tiendas)
-        val adaptador = ArrayAdapter(
-            this, // contexto
-            android.R.layout.simple_list_item_1, //layout.xml que se va a usar
-            arrayTiendas
-        )
-        listView.adapter = adaptador
-        adaptador.notifyDataSetChanged()
+        listView!!.adapter = adaptador
+        adaptador!!.notifyDataSetChanged()
     }
+
 
     fun añadirTienda(adaptador: ArrayList<Tienda>){
         arrayTiendas.add(Tienda(nombreTienda,direccion, RUC ,numero,propietario))
     }
 
+    fun eliminarTienda(adaptador: ArrayList<Tienda>){
+        arrayTiendas.removeAt(idItemSeleccionado)
+    }
+
     override fun onContextItemSelected(item: MenuItem): Boolean {
+
         return when (item.itemId) {
             R.id.mi_editar -> {
                 "Hacer algo con ${idItemSeleccionado}"
@@ -87,6 +92,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.mi_eliminar -> {
+                abrirDialogo()
                 "Hacer algo con ${idItemSeleccionado}"
                 return false
             }
@@ -125,7 +131,19 @@ class MainActivity : AppCompatActivity() {
         //this.startActivity()
     }
 
-
-
+    fun abrirDialogo() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Desea Eliminar")
+        builder.setPositiveButton(
+            "Aceptar",
+            DialogInterface.OnClickListener { //Callback
+                    dialog, which -> eliminarTienda(arrayTiendas)
+                    adaptador!!.notifyDataSetChanged()
+            }
+        )
+        builder.setNegativeButton("Cancelar", null)
+        val dialogo= builder.create()
+        dialogo.show()
+    }
 
 }
