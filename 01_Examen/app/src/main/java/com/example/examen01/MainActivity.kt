@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.ContextMenu
 import android.view.MenuItem
 import android.view.View
-import android.view.View.OnCreateContextMenuListener
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -38,6 +37,7 @@ class MainActivity : AppCompatActivity() {
                     RUC = data?.getStringExtra("RUC").toString()
                     numero = data?.getIntExtra("numero",0)!!
                     propietario = data?.getStringExtra("propietario").toString()
+                    añadirTienda(arrayTiendas)
                 }
             }
         }
@@ -53,17 +53,29 @@ class MainActivity : AppCompatActivity() {
             arrayTiendas
         )
         listView.adapter = adaptador
+        adaptador.notifyDataSetChanged()
         val botonAñadirTienda = findViewById<Button>(R.id.btn_crear)
         botonAñadirTienda.setOnClickListener{
             callbackContenidoIntentExplicito
                 .launch(Intent(this, NuevaTienda::class.java))
-            añadirTienda(adaptador)
             adaptador.notifyDataSetChanged()
         }
         registerForContextMenu(listView)
     }
 
-    fun añadirTienda( adaptador : ArrayAdapter<Tienda>){
+    override fun onResume() {
+        super.onResume()
+        val listView = findViewById<ListView>(R.id.lv_tiendas)
+        val adaptador = ArrayAdapter(
+            this, // contexto
+            android.R.layout.simple_list_item_1, //layout.xml que se va a usar
+            arrayTiendas
+        )
+        listView.adapter = adaptador
+        adaptador.notifyDataSetChanged()
+    }
+
+    fun añadirTienda(adaptador: ArrayList<Tienda>){
         arrayTiendas.add(Tienda(nombreTienda,direccion, RUC ,numero,propietario))
     }
 
