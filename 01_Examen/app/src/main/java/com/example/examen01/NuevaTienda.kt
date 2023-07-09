@@ -7,23 +7,22 @@ import android.widget.Button
 import android.widget.EditText
 
 class NuevaTienda : AppCompatActivity() {
+    var arreglo = BaseDatosEnMemoria.arregloTiendas
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nueva_tienda)
-        val boton = findViewById<Button>(R.id.btn_crearTienda)
-        boton.setOnClickListener {
-            val nombre = findViewById<EditText>(R.id.txt_nombreTienda)
-            val direccion = findViewById<EditText>(R.id.txt_direccion)
-            val ruc = findViewById<EditText>(R.id.txt_ruc)
-            val propietario = findViewById<EditText>(R.id.txt_propietario)
+        val botonCrearTienda = findViewById<Button>(R.id.btn_crearTienda)
+        botonCrearTienda.setOnClickListener {
+            var nombreTienda = (findViewById<EditText>(R.id.txt_nombreTienda)).getText().toString()
+            var direccion = (findViewById<EditText>(R.id.txt_direccion)).getText().toString()
+            var RUC = (findViewById<EditText>(R.id.txt_ruc)).getText().toString()
+            var telefono = Integer.parseInt((findViewById<EditText>(R.id.txt_telefono)).getText().toString())
+            var propietario = (findViewById<EditText>(R.id.txt_propietario)).getText().toString()
 
-            BaseDatos.tablaTiendas!!.crearTienda(
-                nombre.text.toString(),
-                direccion.text.toString(),
-                ruc.text.toString(),
-                propietario.text.toString()
-            )
-            startActivity(Intent(this,MainActivity::class.java))
+            arreglo.add(Tienda(nombreTienda,direccion,RUC,telefono,propietario))
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+
         }
     }
 }

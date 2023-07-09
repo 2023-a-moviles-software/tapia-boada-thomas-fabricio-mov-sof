@@ -34,6 +34,7 @@
 
     <ListView
         android:id="@+id/lv_tiendas"
+        style="@style/Widget.AppCompat.ListView"
         android:layout_width="404dp"
         android:layout_height="562dp"
         app:layout_constraintBottom_toBottomOf="parent"

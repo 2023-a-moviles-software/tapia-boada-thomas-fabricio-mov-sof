@@ -1,15 +1,0 @@
-
-Tkotlin:S1481B"7Remove this unused "cantidadDisponible" local variable.(º¦»ùÿÿÿÿ
-kkotlin:S100%"URename function "aÃ±adirFruta" to match the regular expression ^[a-zA-Z][a-zA-Z0-9]*$(–ø²r
-tkotlin:S1003"]Rename function "aÃ±adirCantidadFruta" to match the regular expression ^[a-zA-Z][a-zA-Z0-9]*$(‹™
-skotlin:S1192/"[Define a constant instead of duplicating this literal "NÃºmero de Fruta no valido" 3 times.(„‚äµ
-Ykotlin:S6510*"AMove "return" statements from all branches before "if" statement.(ÿß­
-Ykotlin:S65105"AMove "return" statements from all branches before "if" statement.(™İÃù
-Ykotlin:S6510A"AMove "return" statements from all branches before "if" statement.(ÿåìî
-Ckotlin:S6518+",Replace function call with indexed accessor.(‡ÜòH
-Dkotlin:S65186",Replace function call with indexed accessor.(©‹¨±
-Dkotlin:S6518A",Replace function call with indexed accessor.(ÿåìî
-Dkotlin:S6518A",Replace function call with indexed accessor.(ÿåìî
-Ikotlin:S6518B",Replace function call with indexed accessor.(º¦»ùÿÿÿÿ
-Ikotlin:S65187",Replace function call with indexed accessor.(™¨•ùÿÿÿÿ
-Ikotlin:S6518C",Replace function call with indexed accessor.(ãØóµüÿÿÿÿ

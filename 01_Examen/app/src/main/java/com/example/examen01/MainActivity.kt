@@ -18,81 +18,38 @@ import androidx.appcompat.app.AppCompatActivity
 
 
 class MainActivity : AppCompatActivity() {
-    var arrayTiendas = arrayListOf<Tienda>()
+    var arreglo = BaseDatosEnMemoria.arregloTiendas
     var idItemSeleccionado = 0
-    var nombreTienda : String = ""
-    var direccion : String = ""
-    var RUC : String = ""
-    var numero : Int = 0
-    var propietario : String = ""
     var adaptador : ArrayAdapter<Tienda>? = null
-    var listView : ListView? = null
-    lateinit var db : BaseDatosHelper
-
-    val callbackCreacionTienda =
-        registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult()
-        ){
-                result ->
-            if (result.resultCode == Activity.RESULT_OK){
-                if (result.data != null){
-                    //Logica de Negocio
-                    val data =  result.data
-                    nombreTienda = data?.getStringExtra("nombre").toString()
-                    direccion = data?.getStringExtra("direccion").toString()
-                    RUC = data?.getStringExtra("RUC").toString()
-                    numero = data?.getIntExtra("numero",0)!!
-                    propietario = data?.getStringExtra("propietario").toString()
-                    añadirTienda(arrayTiendas)
-                }
-            }
-        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        db = BaseDatosHelper(this)
-
-
-        listView = findViewById<ListView>(R.id.lv_tiendas)
+        // adaptador (Iterables)
+        val listView = findViewById<ListView>(R.id.lv_tiendas)
         adaptador = ArrayAdapter(
             this, // contexto
             android.R.layout.simple_list_item_1, //layout.xml que se va a usar
-            arrayTiendas
+            arreglo
         )
-        listView!!.adapter = adaptador
-        adaptador!!.notifyDataSetChanged()
-        val botonAñadirTienda = findViewById<Button>(R.id.btn_crear)
-        botonAñadirTienda.setOnClickListener{
-           irActividad(NuevaTienda::class.java)
-//            arrayTiendas = BaseDatos.tablaTiendas!!.mostrarDatos()!!
-//            adaptador!!.notifyDataSetChanged()
-
-        }
+        listView.adapter = adaptador
         registerForContextMenu(listView)
-    }
-
-    override fun onResume() {
-        super.onResume()
-        listView!!.adapter = adaptador
         adaptador!!.notifyDataSetChanged()
+        val botonNuevaTienda = findViewById<Button>(R.id.btn_crear)
+        botonNuevaTienda.setOnClickListener {
+            irActividad(NuevaTienda::class.java)
+            adaptador!!.notifyDataSetChanged()
+        }
+
     }
 
-
-    fun añadirTienda(adaptador: ArrayList<Tienda>){
-        arrayTiendas.add(Tienda(nombreTienda,direccion, RUC ,propietario))
-    }
-
-    fun eliminarTienda(adaptador: ArrayList<Tienda>){
-        arrayTiendas.removeAt(idItemSeleccionado)
-    }
 
     override fun onContextItemSelected(item: MenuItem): Boolean {
-
         return when (item.itemId) {
             R.id.mi_editar -> {
-                "Hacer algo con ${idItemSeleccionado}"
+                intent = Intent(this,EditarTienda::class.java)
+                intent.putExtra("idTienda",idItemSeleccionado)
+                startActivity(intent)
                 return true
             }
 
@@ -142,13 +99,17 @@ class MainActivity : AppCompatActivity() {
         builder.setPositiveButton(
             "Aceptar",
             DialogInterface.OnClickListener { //Callback
-                    dialog, which -> eliminarTienda(arrayTiendas)
+                    dialog, which -> eliminarTienda()
                     adaptador!!.notifyDataSetChanged()
             }
         )
         builder.setNegativeButton("Cancelar", null)
         val dialogo= builder.create()
         dialogo.show()
+    }
+
+    fun eliminarTienda(){
+        arreglo.removeAt(idItemSeleccionado)
     }
 
 }
