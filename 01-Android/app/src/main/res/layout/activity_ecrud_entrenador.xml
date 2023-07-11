@@ -15,7 +15,8 @@
         android:hint="Ingrese ID"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/input_nombre"
-        tools:layout_editor_absoluteX="99dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/input_nombre"
@@ -26,7 +27,8 @@
         android:hint="Ingrese nombre"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/input_descripcion"
-        tools:layout_editor_absoluteX="99dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/input_descripcion"
@@ -37,7 +39,8 @@
         android:hint="Ingrese descripcion"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/btn_crear_bdd"
-        tools:layout_editor_absoluteX="99dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_buscar_bdd"
@@ -81,6 +84,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
         android:text="Eliminar"
-        app:layout_constraintTop_toBottomOf="@+id/btn_crear_bdd"
-        tools:layout_editor_absoluteX="155dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_crear_bdd" />
 </androidx.constraintlayout.widget.ConstraintLayout>

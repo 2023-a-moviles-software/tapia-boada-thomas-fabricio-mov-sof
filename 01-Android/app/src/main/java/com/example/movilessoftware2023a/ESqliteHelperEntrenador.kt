@@ -21,6 +21,7 @@ class ESqliteHelperEntrenador (contexto: Context?): //this
                 descripcion VARCHAR(50)
                 )
             """.trimIndent()
+        db?.execSQL(scriptSQLCrearTalaEntrenador)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
