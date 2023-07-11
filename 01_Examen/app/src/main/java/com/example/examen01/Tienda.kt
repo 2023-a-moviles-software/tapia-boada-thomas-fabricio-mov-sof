@@ -6,13 +6,13 @@ class Tienda (
     var ruc : String,
     var telefono : Int,
     var propietario: String,
-    var frutas : ArrayList<Fruta>,
+    var frutas: ArrayList<Fruta> = arrayListOf <Fruta>(),
     var ventas : ArrayList<Double>,
     var ventaActual : Double
 
 ) {
     init {
-        this.nombreTienda; this.direccion; this.ruc; this.telefono; this.propietario;this.frutas
+        this.nombreTienda; this.direccion; this.ruc; this.telefono; this.propietario
     }
 
     constructor(
@@ -32,6 +32,10 @@ class Tienda (
         ventas = ArrayList<Double>(),
         ventaActual = 0.0
     )
+
+    fun actualizarFrutas(frutas : ArrayList<Fruta>){
+        this.frutas = frutas
+    }
 
 
     fun añadirFruta(fruta: Fruta) {

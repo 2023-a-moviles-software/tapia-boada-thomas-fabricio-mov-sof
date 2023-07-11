@@ -20,8 +20,8 @@ class NuevaTienda : AppCompatActivity() {
             var propietario = (findViewById<EditText>(R.id.txt_propietario)).getText().toString()
 
             arreglo.add(Tienda(nombreTienda,direccion,RUC,telefono,propietario))
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+
+            finish()
 
         }
     }

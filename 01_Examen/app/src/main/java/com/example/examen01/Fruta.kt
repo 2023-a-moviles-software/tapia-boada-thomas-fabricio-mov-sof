@@ -35,4 +35,8 @@ class Fruta (    val nombreFruta: String,
         this.cantidad = this.cantidad + cantidad
     }
 
+    override fun toString(): String {
+        return "Fruta: $nombreFruta  Precio: $precio  Cantidad: $cantidad"
+    }
+
 }

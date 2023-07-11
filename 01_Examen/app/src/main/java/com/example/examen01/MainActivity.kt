@@ -60,13 +60,20 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.mi_verFrutas -> {
-                "Hacer algo con ${idItemSeleccionado}"
+                intent = Intent(this,ListaFrutas::class.java)
+                intent.putExtra("idTiendaListaFrutas",idItemSeleccionado)
+                startActivity(intent)
                 return false
             }
 
             else -> super.onContextItemSelected(item)
 
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        adaptador!!.notifyDataSetChanged()
     }
 
     override fun onCreateContextMenu(

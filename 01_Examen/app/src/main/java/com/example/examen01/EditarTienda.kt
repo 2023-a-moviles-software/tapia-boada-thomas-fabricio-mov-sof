@@ -37,8 +37,7 @@ class EditarTienda : AppCompatActivity() {
             arreglo.get(idTienda).telefono = telefonoAct
             arreglo.get(idTienda).propietario = propietarioAct
 
-            intent = Intent(this,MainActivity::class.java)
-            startActivity(intent)
+            finish()
 
         }
     }
