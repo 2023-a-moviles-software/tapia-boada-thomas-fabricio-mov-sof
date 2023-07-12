@@ -2,11 +2,11 @@
 package com.example.examen01
 
 
-class Fruta (    val nombreFruta: String,
-                 val precio: Double,
-                 var cantidad: Int,
-                 var disponibilidad: Boolean,
-                 val familiaFruta: String
+class Fruta (var nombreFruta: String,
+             var precio: Double,
+             var cantidad: Int,
+             var disponibilidad: Boolean,
+             var familiaFruta: String
 ) {
     init {
         this.nombreFruta; this.precio; this.cantidad; this.familiaFruta; this.disponibilidad
