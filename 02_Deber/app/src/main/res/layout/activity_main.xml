@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/imgBtn_inicio"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="#00FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="centerInside"
+        android:tint="#3B7BBF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.954"
+        app:srcCompat="@drawable/house_solid" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_pagos"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="#00FFFFFF"
+        android:scaleType="centerInside"
+        android:tint="#3B7BBF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toEndOf="@+id/imgBtn_inicio"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.954"
+        app:srcCompat="@drawable/dollar_sign_solid" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_cartera"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="#00FFFFFF"
+        android:scaleType="centerInside"
+        android:tint="#3B7BBF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintStart_toEndOf="@+id/imgBtn_pagos"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.954"
+        app:srcCompat="@drawable/wallet_solid" />
+
+    <TextView
+        android:id="@+id/tv_inicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/allerta"
+        android:text="Inicio"
+        android:textColor="#3B7BBF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imgBtn_inicio"
+        app:layout_constraintStart_toStartOf="@+id/imgBtn_inicio"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn_inicio"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tv_pagos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/allerta"
+        android:text="Pagos"
+        android:textColor="#3B7BBF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imgBtn_pagos"
+        app:layout_constraintStart_toStartOf="@+id/imgBtn_pagos"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn_pagos"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tv_cartera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/allerta"
+        android:text="Cartera"
+        android:textColor="#3B7BBF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imgBtn_cartera"
+        app:layout_constraintStart_toStartOf="@+id/imgBtn_cartera"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn_cartera"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
