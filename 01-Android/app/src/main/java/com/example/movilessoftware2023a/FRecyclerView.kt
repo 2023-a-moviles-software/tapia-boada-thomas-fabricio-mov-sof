@@ -18,10 +18,19 @@ class FRecyclerView : AppCompatActivity() {
     }
 
     fun inicializarRecyclerView(){
-        val recyclerView = findViewById<RecyclerView>(R.id.rv_entrenadores)
-        val adaptador = FReciclerViewAdaptadorNombreCedula( this, arreglo, recyclerView)
-        recyclerView.itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
-        recyclerView.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
+        val recyclerView = findViewById<RecyclerView>(
+            R.id.rv_entrenadores
+        )
+        val adaptador = FReciclerViewAdaptadorNombreCedula(
+            this,
+            arreglo,
+            recyclerView
+        )
+        recyclerView.adapter = adaptador
+        recyclerView.itemAnimator = androidx.recyclerview.widget
+            .DefaultItemAnimator()
+        recyclerView.layoutManager = androidx.recyclerview.widget
+            .LinearLayoutManager(this)
         adaptador.notifyDataSetChanged()
     }
 
