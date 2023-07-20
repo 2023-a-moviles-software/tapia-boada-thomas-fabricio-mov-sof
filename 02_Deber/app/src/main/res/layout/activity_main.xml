@@ -237,7 +237,7 @@
         android:textColor="@color/grayP"
         app:layout_constraintBottom_toBottomOf="@+id/view6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="@+id/view6"
         app:layout_constraintTop_toTopOf="@+id/view6"
         app:layout_constraintVertical_bias="0.092" />
@@ -251,10 +251,10 @@
         android:textColor="@color/grayP"
         app:layout_constraintBottom_toBottomOf="@+id/view7"
         app:layout_constraintEnd_toEndOf="@+id/view7"
-        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="@+id/view7"
         app:layout_constraintTop_toTopOf="@+id/view7"
-        app:layout_constraintVertical_bias="0.105" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_cartera"
@@ -262,7 +262,7 @@
         android:layout_height="178dp"
         app:layout_constraintBottom_toBottomOf="@+id/view6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.74"
         app:layout_constraintStart_toStartOf="@+id/view6"
         app:layout_constraintTop_toBottomOf="@+id/tv_carteraList"
         app:layout_constraintVertical_bias="0.296" />
@@ -273,7 +273,9 @@
         android:layout_height="175dp"
         app:layout_constraintBottom_toBottomOf="@+id/view7"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.60"
         app:layout_constraintStart_toStartOf="@+id/view7"
-        app:layout_constraintTop_toBottomOf="@+id/tv_movimientosRecientes" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_movimientosRecientes"
+        app:layout_constraintVertical_bias="0.29" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
