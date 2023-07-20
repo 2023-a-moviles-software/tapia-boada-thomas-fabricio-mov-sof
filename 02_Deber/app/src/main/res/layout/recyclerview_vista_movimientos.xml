@@ -30,7 +30,7 @@
         app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
 
     <TextView
-        android:id="@+id/t_saldoActual"
+        android:id="@+id/tv_saldoActual"
         android:layout_width="84dp"
         android:layout_height="32dp"
         android:fontFamily="sans-serif"

@@ -20,7 +20,7 @@ class AdaptadorMovimientosRecientes (
              init {
                 imagenImageView = view.findViewById(R.id.img_imagenMovimiento)
                 nombreMovimientoTextView = view.findViewById(R.id.tv_nombreMovimiento)
-                montoMovimientoTextView = view.findViewById(R.id.t_saldoActual)
+                montoMovimientoTextView = view.findViewById(R.id.tv_saldoActual)
                 fechaMovimientoTextView = view.findViewById(R.id.tv_fechaMovimiento)
              }
             }
@@ -42,7 +42,7 @@ class AdaptadorMovimientosRecientes (
         val movimientoActual = this.lista[position]
         holder.nombreMovimientoTextView.text = movimientoActual.nombre
         holder.fechaMovimientoTextView.text = movimientoActual.fecha
-        holder.montoMovimientoTextView.text = movimientoActual.monto
+        holder.montoMovimientoTextView.text = "$${movimientoActual.monto}"
         holder.imagenImageView.setImageResource(movimientoActual.imagen)
     }
 }
