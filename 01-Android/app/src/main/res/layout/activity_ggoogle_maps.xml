@@ -6,4 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".GGoogleMaps">
 
+    <fragment
+        android:id="@+id/map_ggogle"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="363dp"
+        android:layout_height="513dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".GGoogleMaps" />
+
+    <Button
+        android:id="@+id/btn_ir_carolina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:text="Carolina"
+        app:layout_constraintBottom_toTopOf="@+id/map_ggogle"
+        app:layout_constraintEnd_toEndOf="@+id/map_ggogle"
+        app:layout_constraintStart_toStartOf="@+id/map_ggogle" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
