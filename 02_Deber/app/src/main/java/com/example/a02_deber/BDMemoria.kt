@@ -8,6 +8,7 @@ class BDMemoria {
         cuenta.movimientos.add(Movimiento("Amazon","2023/07/20",-20.00,R.mipmap.ic_amazon))
         cuenta.tarjetas.add(Tarjeta("Thomas Tapia", "12345678901", R.mipmap.ic_visa))
         cuenta.tarjetas.add(Tarjeta("Thomas Tapia", "09876543214",R.mipmap.ic_mastercard))
+        cuenta.tarjetas.add(Tarjeta("Thomas Tapia", "09876543214",R.mipmap.ic_mastercard))
     }
     }
 }

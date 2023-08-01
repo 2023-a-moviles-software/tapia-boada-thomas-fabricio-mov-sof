@@ -80,7 +80,7 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
     // Firestore
     implementation 'com.google.firebase:firebase-firestore-ktx'
-
+    implementation 'com.google.android.gms:play-services-auth:20.0.1'
     androidTestImplementation platform('androidx.compose:compose-bom:2022.10.00')
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
     androidTestImplementation platform('androidx.compose:compose-bom:2022.10.00')
