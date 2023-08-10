@@ -77,6 +77,28 @@ class SQLite {
                 }
         }
 
+        fun consultarTiendasPorId(idTienda: Int) : Tienda? {
+            var tienda : Tienda? = null
+            val query = """
+                SELECT * FROM TIENDA
+                WHERE id_tienda = '$idTienda'
+            """.trimIndent()
+            val result = statement.executeQuery(query)
+            try {
+                if (result.next()){
+                    return Tienda(result.getInt(1),result.getString(2),
+                        result.getString(3), result.getInt(4), result.getString(5))
+                }
+            } catch (e: Exception){
+                println("A ocurrido un error : ${e.toString()}")
+            } finally {
+                result.close()
+            }
+            return null
+        }
+
+
+
         fun eliminarTiendaPorId(idTienda: Int):Boolean {
             val query = """
                 DELETE FROM TIENDA
