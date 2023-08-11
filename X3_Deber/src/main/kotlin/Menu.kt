@@ -12,7 +12,7 @@ class Menu (
     }
 
     fun mostrarMenuFrutas(idTienda : Int){
-        
+
     }
 
     fun mostrarTiendas(){
