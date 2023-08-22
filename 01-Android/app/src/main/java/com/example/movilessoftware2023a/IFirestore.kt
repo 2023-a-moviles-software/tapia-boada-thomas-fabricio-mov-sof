@@ -9,6 +9,7 @@ import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QueryDocumentSnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import java.util.Date
 
 class IFirestore : AppCompatActivity() {
     val query: Query? = null
@@ -27,14 +28,89 @@ class IFirestore : AppCompatActivity() {
         listView.adapter = adaptador
         adaptador.notifyDataSetChanged()
         //Datos Prueba
-        val botonDatosPruebas = findViewById<Button>(R.id.btn_fs_datos_prueba)
-        botonDatosPruebas.setOnClickListener { crearDatosPrueba() }
+        val botonDatosPrueba = findViewById<Button>(R.id.btn_fs_datos_prueba)
+        botonDatosPrueba.setOnClickListener { crearDatosPrueba() }
         //Datos Order By
         val botonOrderBy = findViewById<Button>(R.id.btn_fs_order_by)
         botonOrderBy.setOnClickListener { consultarConOrderBy(adaptador) }
         //Consultad Documento
         val botonConsultarDocumento = findViewById<Button>(R.id.btn_fs_odoc)
         botonConsultarDocumento.setOnClickListener { consultarDocumento(adaptador) }
+        // Consultar Indice compuesto
+        val botonIndiceCompuesto = findViewById<Button>(R.id.btn_fs_ind_comp)
+        botonIndiceCompuesto.setOnClickListener { consultarIndiceCompuesto(adaptador)  }
+        //Datos prueba
+        val botonCrear = findViewById<Button>(R.id.btn_fs_crear)
+        botonCrear.setOnClickListener { crearEjemplo() }
+        //Eliminar
+        val botonEliminar = findViewById<Button>(R.id.btn_fs_eliminar)
+        botonEliminar.setOnClickListener { eliminar() }
+    }
+
+    fun eliminar(){
+        val db = Firebase.firestore
+        val referenciaEjemploEstudiante = db.collection("ejemplo")
+        referenciaEjemploEstudiante
+            .document("12345678")
+            .delete()
+            .addOnSuccessListener {  }
+            .addOnFailureListener {  }
+    }
+
+    fun crearEjemplo(){
+        val db = Firebase.firestore
+        val referenciaEjemploEstudiante = db
+            .collection("ejemplo")
+            // .document("id_hijo")
+            // .collection("estudiante")
+        val identificador = Date().time
+        val datosEstudiante = hashMapOf(
+            "nombre" to "Thomas",
+            "graduado" to false,
+            "promedio" to 20.00,
+            "direccion" to hashMapOf(
+                "direccion" to "Quito",
+                "numeroCalle" to 1234
+            ),
+            "materias" to listOf("web", "moviles")
+        )
+        //identificador quemado
+        referenciaEjemploEstudiante
+            .document("12345678")
+            .set(datosEstudiante)
+            .addOnFailureListener {  }
+            .addOnSuccessListener {  }
+        // identificador quemado pero autogenerado con Date().time
+        referenciaEjemploEstudiante
+            .document(identificador.toString())
+            .set(datosEstudiante)
+            .addOnSuccessListener {  }
+            .addOnFailureListener {  }
+        // sin IDENTIFICADOR
+        referenciaEjemploEstudiante
+            .add(datosEstudiante)
+            .addOnSuccessListener {  }
+            .addOnFailureListener {  }
+    }
+
+
+    fun consultarIndiceCompuesto(adaptador: ArrayAdapter<ICities>){
+        val db = Firebase.firestore
+        val citiesRefUnico = db.collection("cities")
+        limpiarArreglo()
+        adaptador.notifyDataSetChanged()
+        citiesRefUnico
+            .whereEqualTo("capital", false)
+            .whereLessThanOrEqualTo("population",4000000)
+            .orderBy("population", Query.Direction.DESCENDING)
+            .get()
+            .addOnSuccessListener {
+                for (ciudad in it){
+                    anadirAArregloCiudad(ciudad)
+                }
+                adaptador.notifyDataSetChanged()
+            }
+            .addOnFailureListener {  }
     }
 
     fun crearDatosPrueba(){
