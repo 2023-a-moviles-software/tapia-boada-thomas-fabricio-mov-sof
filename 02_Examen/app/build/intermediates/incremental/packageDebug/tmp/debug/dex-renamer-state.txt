@@ -1,10 +1,13 @@
-#Thu Jul 13 11:55:58 COT 2023
-base.0=E\:\\RepositorioIntellJ\\tapia-boada-thomas-fabricio-mov-sof\\01_Examen\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=E\:\\RepositorioIntellJ\\tapia-boada-thomas-fabricio-mov-sof\\01_Examen\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=E\:\\RepositorioIntellJ\\tapia-boada-thomas-fabricio-mov-sof\\01_Examen\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
+#Wed Aug 30 23:05:11 ECT 2023
+base.0=E\:\\RepositorioIntellJ\\tapia-boada-thomas-fabricio-mov-sof\\02_Examen\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=E\:\\RepositorioIntellJ\\tapia-boada-thomas-fabricio-mov-sof\\02_Examen\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=E\:\\RepositorioIntellJ\\tapia-boada-thomas-fabricio-mov-sof\\02_Examen\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
+base.3=E\:\\RepositorioIntellJ\\tapia-boada-thomas-fabricio-mov-sof\\02_Examen\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=6/classes.dex
+path.3=classes2.dex
 renamed.0=classes.dex
 renamed.1=classes2.dex
 renamed.2=classes3.dex
+renamed.3=classes4.dex

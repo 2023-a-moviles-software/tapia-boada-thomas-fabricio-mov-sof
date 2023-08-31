@@ -3,6 +3,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">Examen01</string>
+    <string name="default_web_client_id" translatable="false">207043596579-qjh9ku9f5hh544m6120rudun0255p59e.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">207043596579</string>
+    <string name="google_api_key" translatable="false">AIzaSyA2I-H8Sf52CogbXosiMEY_HgEzhghDvUA</string>
+    <string name="google_app_id" translatable="false">1:207043596579:android:568b480fe870cb34ea7c96</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA2I-H8Sf52CogbXosiMEY_HgEzhghDvUA</string>
+    <string name="google_storage_bucket" translatable="false">examenmoviles-40477.appspot.com</string>
+    <string name="project_id" translatable="false">examenmoviles-40477</string>
     <style name="Base.Theme.Examen01" parent="Theme.Material3.DayNight.NoActionBar">
         
         

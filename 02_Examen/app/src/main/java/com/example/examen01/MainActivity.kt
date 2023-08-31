@@ -1,40 +1,42 @@
 package com.example.examen01
 
-import android.app.Activity
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.ContextMenu
-import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.firestore.Query
+import com.google.firebase.firestore.QueryDocumentSnapshot
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 
 class MainActivity : AppCompatActivity() {
-    var arreglo = BaseDatosEnMemoria.arregloTiendas
+    var query: Query? = null
+    val arreglo: ArrayList<Tienda> = arrayListOf()
     var idItemSeleccionado = 0
-    var adaptador : ArrayAdapter<Tienda>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         // adaptador (Iterables)
         val listView = findViewById<ListView>(R.id.lv_tiendas)
-        adaptador = ArrayAdapter(
+        val adaptador = ArrayAdapter(
             this, // contexto
             android.R.layout.simple_list_item_1, //layout.xml que se va a usar
             arreglo
         )
         listView.adapter = adaptador
+        consultarTiendas(adaptador)
         registerForContextMenu(listView)
-        adaptador!!.notifyDataSetChanged()
+        adaptador.notifyDataSetChanged()
         val botonNuevaTienda = findViewById<Button>(R.id.btn_crear)
         botonNuevaTienda.setOnClickListener {
             irActividad(NuevaTienda::class.java)
@@ -42,6 +44,45 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+    fun consultarTiendas(
+        adaptador: ArrayAdapter<Tienda>
+    ) {
+        val db = Firebase.firestore
+        val tiendasRefUnico = db.collection("tiendas")
+        limpiarArreglo()
+        adaptador.notifyDataSetChanged()
+        tiendasRefUnico
+            .get()
+            .addOnSuccessListener { // it -> eso (lo que llegue)
+                for (tienda in it){
+                    tienda.id
+                    anadirAArregloTienda(tienda)
+                }
+                adaptador.notifyDataSetChanged()
+            }
+            .addOnFailureListener {
+                //Errores
+            }
+    }
+
+    fun anadirAArregloTienda(
+        tienda: QueryDocumentSnapshot,
+    ){
+        //ciudad.id
+        val nuevaTienda = Tienda(
+            tienda.data.get("nombre") as String?,
+            tienda.data.get("direccion") as String?,
+            tienda.data.get("ruc") as String?,
+            tienda.data.get("telefono") as Number?,
+            tienda.data.get("propietario") as String?
+        )
+        arreglo.add(nuevaTienda)
+    }
+
+
+
+    fun limpiarArreglo() {arreglo.clear()}
 
 
     override fun onContextItemSelected(item: MenuItem): Boolean {
@@ -71,10 +112,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        adaptador!!.notifyDataSetChanged()
-    }
 
     override fun onCreateContextMenu(
         menu: ContextMenu?,
@@ -107,7 +144,6 @@ class MainActivity : AppCompatActivity() {
             "Aceptar",
             DialogInterface.OnClickListener { //Callback
                     dialog, which -> eliminarTienda()
-                    adaptador!!.notifyDataSetChanged()
             }
         )
         builder.setNegativeButton("Cancelar", null)

@@ -1,11 +1,11 @@
 package com.example.examen01
 
 class Tienda (
-    var nombreTienda : String,
-    var direccion : String,
-    var ruc : String,
-    var telefono : Int,
-    var propietario: String,
+    var nombreTienda : String?,
+    var direccion : String?,
+    var ruc : String?,
+    var telefono : Number?,
+    var propietario: String?,
     var frutas: ArrayList<Fruta> = arrayListOf <Fruta>(),
     var ventas : ArrayList<Double>,
     var ventaActual : Double
@@ -16,11 +16,11 @@ class Tienda (
     }
 
     constructor(
-        nombreTienda: String,
-        direccion: String,
-        ruc: String,
-        telefono: Int,
-        propietario: String
+        nombreTienda: String?,
+        direccion: String?,
+        ruc: String?,
+        telefono: Number?,
+        propietario: String?
 
     ) : this(
         nombreTienda,

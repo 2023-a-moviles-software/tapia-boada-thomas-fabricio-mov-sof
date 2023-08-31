@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.examen01.app-mergeDebugResources-26:/values-h360dp-land-v13/values-h360dp-land-v13.xml",
+            "outputFile": "com.example.examen01.app-mergeDebugResources-30:/values-h360dp-land-v13/values-h360dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\PC GAMER\\.gradle\\caches\\transforms-3\\4920260a7502682349d01838acd6be0c\\transformed\\material-1.5.0\\res\\values-h360dp-land-v13\\values-h360dp-land-v13.xml",
+                    "source": "C:\\Users\\thoma\\.gradle\\caches\\transforms-3\\3a99a4ce125f74c1ce227af2544fe6c2\\transformed\\material-1.5.0\\res\\values-h360dp-land-v13\\values-h360dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

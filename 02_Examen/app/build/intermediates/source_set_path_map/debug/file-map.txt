@@ -1,31 +1,35 @@
-com.example.examen01.app-startup-runtime-1.1.1-0 C:\Users\PC GAMER\.gradle\caches\transforms-3\043f9b69aae0bf63dc71ac6e25e9561d\transformed\startup-runtime-1.1.1\res
-com.example.examen01.app-lifecycle-viewmodel-savedstate-2.5.1-1 C:\Users\PC GAMER\.gradle\caches\transforms-3\04da5b254b1d821652b9014bdf0c5b6c\transformed\lifecycle-viewmodel-savedstate-2.5.1\res
-com.example.examen01.app-drawerlayout-1.1.1-2 C:\Users\PC GAMER\.gradle\caches\transforms-3\1b72b0c695a31ebfffb5a048fd2c4bc0\transformed\drawerlayout-1.1.1\res
-com.example.examen01.app-viewpager2-1.0.0-3 C:\Users\PC GAMER\.gradle\caches\transforms-3\2006a3617d27ea29dd8e655721ca91e8\transformed\viewpager2-1.0.0\res
-com.example.examen01.app-core-1.9.0-4 C:\Users\PC GAMER\.gradle\caches\transforms-3\355680e380c94bf33aefa5ec54053475\transformed\core-1.9.0\res
-com.example.examen01.app-fragment-1.3.6-5 C:\Users\PC GAMER\.gradle\caches\transforms-3\3ad0070e4ebe8132bbc68e4c791f1db8\transformed\fragment-1.3.6\res
-com.example.examen01.app-recyclerview-1.1.0-6 C:\Users\PC GAMER\.gradle\caches\transforms-3\3b2d6bbb50972c55982607d2901bd64b\transformed\recyclerview-1.1.0\res
-com.example.examen01.app-material-1.5.0-7 C:\Users\PC GAMER\.gradle\caches\transforms-3\4920260a7502682349d01838acd6be0c\transformed\material-1.5.0\res
-com.example.examen01.app-lifecycle-livedata-core-2.5.1-8 C:\Users\PC GAMER\.gradle\caches\transforms-3\5107301b75c2e2a2b5391a61e8189c8f\transformed\lifecycle-livedata-core-2.5.1\res
-com.example.examen01.app-annotation-experimental-1.3.0-9 C:\Users\PC GAMER\.gradle\caches\transforms-3\541386461abfec4ef24412e1057729e6\transformed\annotation-experimental-1.3.0\res
-com.example.examen01.app-activity-1.6.0-10 C:\Users\PC GAMER\.gradle\caches\transforms-3\570e622356ed3f6e1ad0abc1ddb670fc\transformed\activity-1.6.0\res
-com.example.examen01.app-lifecycle-viewmodel-2.5.1-11 C:\Users\PC GAMER\.gradle\caches\transforms-3\6addec20b618f7560e16f941331c5fa0\transformed\lifecycle-viewmodel-2.5.1\res
-com.example.examen01.app-cardview-1.0.0-12 C:\Users\PC GAMER\.gradle\caches\transforms-3\723462e12b42280d55cdc99361d235f1\transformed\cardview-1.0.0\res
-com.example.examen01.app-transition-1.2.0-13 C:\Users\PC GAMER\.gradle\caches\transforms-3\7382f2326f2d416ef600d9e968f93328\transformed\transition-1.2.0\res
-com.example.examen01.app-savedstate-1.2.0-14 C:\Users\PC GAMER\.gradle\caches\transforms-3\7d5504bdafd6082f16efd1c6e8844704\transformed\savedstate-1.2.0\res
-com.example.examen01.app-appcompat-1.6.1-15 C:\Users\PC GAMER\.gradle\caches\transforms-3\7e2d732ba74daf2b95eb59bbfbaf28b9\transformed\appcompat-1.6.1\res
-com.example.examen01.app-appcompat-resources-1.6.1-16 C:\Users\PC GAMER\.gradle\caches\transforms-3\85520f32459252265febfd415e85821b\transformed\appcompat-resources-1.6.1\res
-com.example.examen01.app-lifecycle-runtime-2.5.1-17 C:\Users\PC GAMER\.gradle\caches\transforms-3\8574fa933f1b641ec80463b6734b251b\transformed\lifecycle-runtime-2.5.1\res
-com.example.examen01.app-coordinatorlayout-1.1.0-18 C:\Users\PC GAMER\.gradle\caches\transforms-3\a7510edc3e0304889b3ccf6ea43baa5b\transformed\coordinatorlayout-1.1.0\res
-com.example.examen01.app-lifecycle-process-2.4.1-19 C:\Users\PC GAMER\.gradle\caches\transforms-3\b75c9cf1c7596b4fc8b2f3204d7f60be\transformed\lifecycle-process-2.4.1\res
-com.example.examen01.app-emoji2-1.2.0-20 C:\Users\PC GAMER\.gradle\caches\transforms-3\d865af184f613a5ae28aa580563e2c56\transformed\emoji2-1.2.0\res
-com.example.examen01.app-core-ktx-1.9.0-21 C:\Users\PC GAMER\.gradle\caches\transforms-3\d97cc2d80f7c9226b80f36094b300f2a\transformed\core-ktx-1.9.0\res
-com.example.examen01.app-constraintlayout-2.1.4-22 C:\Users\PC GAMER\.gradle\caches\transforms-3\da0bebd5195e903bf152de03867ea2ea\transformed\constraintlayout-2.1.4\res
-com.example.examen01.app-emoji2-views-helper-1.2.0-23 C:\Users\PC GAMER\.gradle\caches\transforms-3\f27f4d12a066ebef5e53b9a04f1ebc2b\transformed\emoji2-views-helper-1.2.0\res
-com.example.examen01.app-pngs-24 E:\RepositorioIntellJ\tapia-boada-thomas-fabricio-mov-sof\01_Examen\app\build\generated\res\pngs\debug
-com.example.examen01.app-resValues-25 E:\RepositorioIntellJ\tapia-boada-thomas-fabricio-mov-sof\01_Examen\app\build\generated\res\resValues\debug
-com.example.examen01.app-packageDebugResources-26 E:\RepositorioIntellJ\tapia-boada-thomas-fabricio-mov-sof\01_Examen\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.examen01.app-packageDebugResources-27 E:\RepositorioIntellJ\tapia-boada-thomas-fabricio-mov-sof\01_Examen\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.examen01.app-merged_res-28 E:\RepositorioIntellJ\tapia-boada-thomas-fabricio-mov-sof\01_Examen\app\build\intermediates\merged_res\debug
-com.example.examen01.app-debug-29 E:\RepositorioIntellJ\tapia-boada-thomas-fabricio-mov-sof\01_Examen\app\src\debug\res
-com.example.examen01.app-main-30 E:\RepositorioIntellJ\tapia-boada-thomas-fabricio-mov-sof\01_Examen\app\src\main\res
+com.example.examen01.app-constraintlayout-2.1.4-0 C:\Users\thoma\.gradle\caches\transforms-3\02aee23e76889db789651775b9ca308f\transformed\constraintlayout-2.1.4\res
+com.example.examen01.app-play-services-basement-18.1.0-1 C:\Users\thoma\.gradle\caches\transforms-3\1a8a15966fe5bb5a30ec7cabe64a61ef\transformed\play-services-basement-18.1.0\res
+com.example.examen01.app-recyclerview-1.1.0-2 C:\Users\thoma\.gradle\caches\transforms-3\21097f13b4fbfd43a84e782504a77e89\transformed\recyclerview-1.1.0\res
+com.example.examen01.app-startup-runtime-1.1.1-3 C:\Users\thoma\.gradle\caches\transforms-3\2fcb4b8f29fecda0b164c823e3317f74\transformed\startup-runtime-1.1.1\res
+com.example.examen01.app-lifecycle-viewmodel-2.5.1-4 C:\Users\thoma\.gradle\caches\transforms-3\3177ecce96e11b3cdea945d0852d7861\transformed\lifecycle-viewmodel-2.5.1\res
+com.example.examen01.app-cardview-1.0.0-5 C:\Users\thoma\.gradle\caches\transforms-3\35472737602a32f0f22bc92657b8e103\transformed\cardview-1.0.0\res
+com.example.examen01.app-transition-1.2.0-6 C:\Users\thoma\.gradle\caches\transforms-3\38516b0b185c38d8074a1c08865b6a9d\transformed\transition-1.2.0\res
+com.example.examen01.app-material-1.5.0-7 C:\Users\thoma\.gradle\caches\transforms-3\3a99a4ce125f74c1ce227af2544fe6c2\transformed\material-1.5.0\res
+com.example.examen01.app-emoji2-1.2.0-8 C:\Users\thoma\.gradle\caches\transforms-3\420a7e5b0aed2557b6cd9004a612e7ca\transformed\emoji2-1.2.0\res
+com.example.examen01.app-fragment-1.3.6-9 C:\Users\thoma\.gradle\caches\transforms-3\46c745d297c511c073fd1df5a6f65162\transformed\fragment-1.3.6\res
+com.example.examen01.app-viewpager2-1.0.0-10 C:\Users\thoma\.gradle\caches\transforms-3\4b5e49087aa7d4bd61e1a8b25799ba11\transformed\viewpager2-1.0.0\res
+com.example.examen01.app-coordinatorlayout-1.1.0-11 C:\Users\thoma\.gradle\caches\transforms-3\4f50d013271edb8877e1c007c0e2a13c\transformed\coordinatorlayout-1.1.0\res
+com.example.examen01.app-lifecycle-runtime-2.5.1-12 C:\Users\thoma\.gradle\caches\transforms-3\5c324281bb82b8a4aec164469c53cc9c\transformed\lifecycle-runtime-2.5.1\res
+com.example.examen01.app-lifecycle-viewmodel-savedstate-2.5.1-13 C:\Users\thoma\.gradle\caches\transforms-3\6953ff44ac017755ee18151bbcaad4d3\transformed\lifecycle-viewmodel-savedstate-2.5.1\res
+com.example.examen01.app-appcompat-1.6.1-14 C:\Users\thoma\.gradle\caches\transforms-3\71daca668ee01100c1490298b24c003a\transformed\appcompat-1.6.1\res
+com.example.examen01.app-lifecycle-process-2.4.1-15 C:\Users\thoma\.gradle\caches\transforms-3\7c863577895f84920bd1fd4fd45ca2e3\transformed\lifecycle-process-2.4.1\res
+com.example.examen01.app-savedstate-1.2.0-16 C:\Users\thoma\.gradle\caches\transforms-3\8e9e6351727b47b231b8b8b73c2456dc\transformed\savedstate-1.2.0\res
+com.example.examen01.app-emoji2-views-helper-1.2.0-17 C:\Users\thoma\.gradle\caches\transforms-3\b405dff2b8871a6ee0a8b6bc958909b6\transformed\emoji2-views-helper-1.2.0\res
+com.example.examen01.app-activity-1.6.0-18 C:\Users\thoma\.gradle\caches\transforms-3\b901389bcc1f5f21bac6087e4a15990a\transformed\activity-1.6.0\res
+com.example.examen01.app-annotation-experimental-1.3.0-19 C:\Users\thoma\.gradle\caches\transforms-3\bb899698775f78d9674b4dbf7a0617c8\transformed\annotation-experimental-1.3.0\res
+com.example.examen01.app-drawerlayout-1.1.1-20 C:\Users\thoma\.gradle\caches\transforms-3\bec17dd67a650d2ee65bc1d9e0aedd8c\transformed\drawerlayout-1.1.1\res
+com.example.examen01.app-lifecycle-livedata-core-2.5.1-21 C:\Users\thoma\.gradle\caches\transforms-3\c6f1505cfaf5da4046f1c3ade3b0618c\transformed\lifecycle-livedata-core-2.5.1\res
+com.example.examen01.app-appcompat-resources-1.6.1-22 C:\Users\thoma\.gradle\caches\transforms-3\cf0c0119b75f330e89b7abf8ea5b2792\transformed\appcompat-resources-1.6.1\res
+com.example.examen01.app-firebase-common-20.3.1-23 C:\Users\thoma\.gradle\caches\transforms-3\f0c6abbce24a654e639277ffc09e752a\transformed\firebase-common-20.3.1\res
+com.example.examen01.app-core-ktx-1.9.0-24 C:\Users\thoma\.gradle\caches\transforms-3\f160c70dcb9cb84c21e5a0db376f38d0\transformed\core-ktx-1.9.0\res
+com.example.examen01.app-core-1.9.0-25 C:\Users\thoma\.gradle\caches\transforms-3\f75533d08bbc2ca0bc797a9b4e4700e8\transformed\core-1.9.0\res
+com.example.examen01.app-play-services-base-18.0.1-26 C:\Users\thoma\.gradle\caches\transforms-3\f7b4a7cd09d44cfd8f880fc474d180fe\transformed\play-services-base-18.0.1\res
+com.example.examen01.app-google-services-27 E:\RepositorioIntellJ\tapia-boada-thomas-fabricio-mov-sof\02_Examen\app\build\generated\res\google-services\debug
+com.example.examen01.app-pngs-28 E:\RepositorioIntellJ\tapia-boada-thomas-fabricio-mov-sof\02_Examen\app\build\generated\res\pngs\debug
+com.example.examen01.app-resValues-29 E:\RepositorioIntellJ\tapia-boada-thomas-fabricio-mov-sof\02_Examen\app\build\generated\res\resValues\debug
+com.example.examen01.app-packageDebugResources-30 E:\RepositorioIntellJ\tapia-boada-thomas-fabricio-mov-sof\02_Examen\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.examen01.app-packageDebugResources-31 E:\RepositorioIntellJ\tapia-boada-thomas-fabricio-mov-sof\02_Examen\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.examen01.app-merged_res-32 E:\RepositorioIntellJ\tapia-boada-thomas-fabricio-mov-sof\02_Examen\app\build\intermediates\merged_res\debug
+com.example.examen01.app-debug-33 E:\RepositorioIntellJ\tapia-boada-thomas-fabricio-mov-sof\02_Examen\app\src\debug\res
+com.example.examen01.app-main-34 E:\RepositorioIntellJ\tapia-boada-thomas-fabricio-mov-sof\02_Examen\app\src\main\res
