@@ -22,27 +22,34 @@ class MainActivity : AppCompatActivity() {
     var query: Query? = null
     val arreglo: ArrayList<Tienda> = arrayListOf()
     var idItemSeleccionado = 0
+    var adaptador : ArrayAdapter<Tienda>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         // adaptador (Iterables)
         val listView = findViewById<ListView>(R.id.lv_tiendas)
-        val adaptador = ArrayAdapter(
+        adaptador = ArrayAdapter(
             this, // contexto
             android.R.layout.simple_list_item_1, //layout.xml que se va a usar
             arreglo
         )
         listView.adapter = adaptador
-        consultarTiendas(adaptador)
+//        consultarTiendas(adaptador!!)
         registerForContextMenu(listView)
-        adaptador.notifyDataSetChanged()
+        adaptador!!.notifyDataSetChanged()
         val botonNuevaTienda = findViewById<Button>(R.id.btn_crear)
         botonNuevaTienda.setOnClickListener {
             irActividad(NuevaTienda::class.java)
             adaptador!!.notifyDataSetChanged()
         }
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        consultarTiendas(adaptador!!)
+        adaptador!!.notifyDataSetChanged()
     }
 
     fun consultarTiendas(
@@ -71,6 +78,7 @@ class MainActivity : AppCompatActivity() {
     ){
         //ciudad.id
         val nuevaTienda = Tienda(
+            tienda.id,
             tienda.data.get("nombre") as String?,
             tienda.data.get("direccion") as String?,
             tienda.data.get("ruc") as String?,
@@ -86,23 +94,26 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onContextItemSelected(item: MenuItem): Boolean {
+        var idTienda = arreglo.get(idItemSeleccionado).idTienda
+        var nombreTienda = arreglo.get(idItemSeleccionado).nombreTienda
         return when (item.itemId) {
             R.id.mi_editar -> {
                 intent = Intent(this,EditarTienda::class.java)
-                intent.putExtra("idTienda",idItemSeleccionado)
+                intent.putExtra("idTienda",idTienda)
                 startActivity(intent)
                 return true
             }
 
             R.id.mi_eliminar -> {
-                abrirDialogo()
+                abrirDialogo(idTienda!!)
                 "Hacer algo con ${idItemSeleccionado}"
                 return false
             }
 
             R.id.mi_verFrutas -> {
                 intent = Intent(this,ListaFrutas::class.java)
-                intent.putExtra("idTiendaListaFrutas",idItemSeleccionado)
+                intent.putExtra("idTienda",idTienda)
+                intent.putExtra("nombreTienda", nombreTienda)
                 startActivity(intent)
                 return false
             }
@@ -137,13 +148,13 @@ class MainActivity : AppCompatActivity() {
         //this.startActivity()
     }
 
-    fun abrirDialogo() {
+    fun abrirDialogo(idTienda: String) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Desea Eliminar")
         builder.setPositiveButton(
             "Aceptar",
             DialogInterface.OnClickListener { //Callback
-                    dialog, which -> eliminarTienda()
+                    dialog, which -> eliminarTienda(idTienda)
             }
         )
         builder.setNegativeButton("Cancelar", null)
@@ -151,8 +162,13 @@ class MainActivity : AppCompatActivity() {
         dialogo.show()
     }
 
-    fun eliminarTienda(){
-        arreglo.removeAt(idItemSeleccionado)
+    fun eliminarTienda(idTienda : String){
+        var db = Firebase.firestore
+        var tiendasReferencia = db.collection("tiendas")
+        tiendasReferencia
+            .document(idTienda)
+            .delete()
+        consultarTiendas(adaptador!!)
     }
 
 }

@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class CrearFruta : AppCompatActivity() {
     var arreglo = BaseDatosEnMemoria.arregloTiendas
@@ -14,7 +16,7 @@ class CrearFruta : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crear_fruta)
         var objetoIntent : Intent = intent
-        val idTienda = objetoIntent.getIntExtra("idTiendaFruta",10)
+        val idTienda = objetoIntent.getStringExtra("idTiendaFruta")
         val botonCrearFrutaTienda = findViewById<Button>(R.id.btn_crearFrutaTienda)
 
         botonCrearFrutaTienda.setOnClickListener {
@@ -23,11 +25,33 @@ class CrearFruta : AppCompatActivity() {
             var cantidadFruta = Integer.parseInt(findViewById<EditText>(R.id.txt_cantidad).text.toString())
             var familiaFruta = findViewById<EditText>(R.id.txt_familiaFruta).text.toString()
 
-            arreglo[idTienda].frutas.add(Fruta(nombreFruta,precioFruta,cantidadFruta,familiaFruta))
+            crearFruta(idTienda!!, nombreFruta, precioFruta, cantidadFruta, familiaFruta)
 
             finish()
         }
 
-
     }
+
+    fun crearFruta(
+        idTienda : String,
+        nombre : String,
+        precio : Double,
+        cantidad : Number,
+        familia : String,
+    ) {
+        val db = Firebase.firestore
+        val referenciaTienda = db
+            .collection("tiendas").document(idTienda).collection("frutas")
+        val datosTienda = hashMapOf(
+            "nombre" to nombre,
+            "precio" to precio,
+            "cantidad" to cantidad,
+            "familia" to familia,
+        )
+        referenciaTienda
+            .add(datosTienda)
+            .addOnSuccessListener {  }
+            .addOnFailureListener {  }
+    }
+
 }

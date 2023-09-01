@@ -8,21 +8,17 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class EditarTienda : AppCompatActivity() {
-    var arreglo = BaseDatosEnMemoria.arregloTiendas
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_editar_tienda)
         val objetoIntent : Intent = intent
-        var idTienda = objetoIntent.getIntExtra("idTienda",10)
-        findViewById<TextView>(R.id.tv_tituloNombreTienda).setText(arreglo.get(idTienda).nombreTienda)
-        findViewById<EditText>(R.id.txt_nombreTiendaEdit).setText(arreglo.get(idTienda).nombreTienda)
-        findViewById<EditText>(R.id.txt_direccionEdit).setText(arreglo.get(idTienda).direccion)
-        findViewById<EditText>(R.id.txt_RUCEdit).setText(arreglo.get(idTienda).ruc)
-        findViewById<EditText>(R.id.txt_telefonoEdit).setText((arreglo.get(idTienda).telefono.toString()))
-        findViewById<EditText>(R.id.txt_propietarioEdit).setText(arreglo.get(idTienda).propietario)
+        var idTienda = objetoIntent.getStringExtra("idTienda")
+        consultarTiendaPorId(idTienda!!)
 
         val botonActualizarTienda = findViewById<Button>(R.id.btn_ActualizarTienda)
         botonActualizarTienda.setOnClickListener {
@@ -31,14 +27,40 @@ class EditarTienda : AppCompatActivity() {
             var RUCAct = findViewById<EditText>(R.id.txt_RUCEdit).text.toString()
             var telefonoAct = Integer.parseInt(findViewById<EditText>(R.id.txt_telefonoEdit).text.toString())
             var propietarioAct = findViewById<EditText>(R.id.txt_propietarioEdit).text.toString()
-            arreglo.get(idTienda).nombreTienda = nombreTiendaAct
-            arreglo.get(idTienda).direccion = direccionAct
-            arreglo.get(idTienda).ruc = RUCAct
-            arreglo.get(idTienda).telefono = telefonoAct
-            arreglo.get(idTienda).propietario = propietarioAct
-
+            actualizarTienda(idTienda,nombreTiendaAct,direccionAct,RUCAct,telefonoAct,propietarioAct)
             finish()
 
         }
+    }
+
+    fun consultarTiendaPorId(idTienda : String){
+        val db = Firebase.firestore
+        val tiendaReferencia = db.collection("tiendas")
+        tiendaReferencia
+            .document(idTienda)
+            .get()
+            .addOnSuccessListener {
+                findViewById<TextView>(R.id.tv_tituloNombreTienda).text = it.data?.get("nombre") as String?
+                findViewById<EditText>(R.id.txt_nombreTiendaEdit).setText(it.data?.get("nombre") as String?)
+                findViewById<EditText>(R.id.txt_direccionEdit).setText(it.data?.get("direccion") as String?)
+                findViewById<EditText>(R.id.txt_RUCEdit).setText(it.data?.get("ruc") as String?)
+                findViewById<EditText>(R.id.txt_telefonoEdit).setText((it.data?.get("telefono") as Number?).toString())
+                findViewById<EditText>(R.id.txt_propietarioEdit).setText(it.data?.get("propietario") as String?)
+            }
+    }
+
+    fun actualizarTienda(idTienda: String ,nombre: String, direccion: String, ruc: String, telefono: Number, propietario: String ){
+        var db = Firebase.firestore
+        var tiendasReferencia = db.collection("tiendas").document(idTienda)
+        tiendasReferencia.set(
+            hashMapOf(
+                "nombre" to nombre,
+                "direccion" to direccion,
+                "ruc" to ruc,
+                "telefono" to telefono,
+                "propietario" to propietario
+            )
+        )
+
     }
 }

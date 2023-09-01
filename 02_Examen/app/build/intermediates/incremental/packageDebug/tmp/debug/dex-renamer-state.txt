@@ -1,4 +1,4 @@
-#Wed Aug 30 23:05:11 ECT 2023
+#Thu Aug 31 20:29:52 ECT 2023
 base.0=E\:\\RepositorioIntellJ\\tapia-boada-thomas-fabricio-mov-sof\\02_Examen\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=E\:\\RepositorioIntellJ\\tapia-boada-thomas-fabricio-mov-sof\\02_Examen\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=E\:\\RepositorioIntellJ\\tapia-boada-thomas-fabricio-mov-sof\\02_Examen\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex

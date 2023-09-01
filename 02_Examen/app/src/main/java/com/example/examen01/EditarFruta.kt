@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class EditarFruta : AppCompatActivity() {
     var arreglo = BaseDatosEnMemoria.arregloTiendas
@@ -14,14 +16,10 @@ class EditarFruta : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_editar_fruta)
         val objetoIntent : Intent = intent
-        val idTienda = objetoIntent.getIntExtra("idTienda",10)
-        val idFruta = objetoIntent.getIntExtra("idFruta",10)
+        val idTienda = objetoIntent.getStringExtra("idTienda")
+        val idFruta = objetoIntent.getStringExtra("idFruta")
 
-        findViewById<TextView>(R.id.tv_nombreFrutaEdit).setText(arreglo[idTienda].frutas[idFruta].nombreFruta)
-        findViewById<EditText>(R.id.txt_nombreFrutaEdit).setText(arreglo[idTienda].frutas[idFruta].nombreFruta)
-        findViewById<EditText>(R.id.txt_precioFrutaEdit).setText((arreglo[idTienda].frutas[idFruta].precio).toString())
-        findViewById<EditText>(R.id.txt_cantidadFrutaEdit).setText((arreglo[idTienda].frutas[idFruta].cantidad).toString())
-        findViewById<EditText>(R.id.txt_familiaFrutaEdit).setText(arreglo[idTienda].frutas[idFruta].familiaFruta)
+        consultarFrutaPorId(idTienda!!, idFruta!!)
 
         val botonActualizarFruta = findViewById<Button>(R.id.btn_actualizarFruta)
         botonActualizarFruta.setOnClickListener {
@@ -30,14 +28,48 @@ class EditarFruta : AppCompatActivity() {
             var cantidadFruta = (findViewById<EditText>(R.id.txt_cantidadFrutaEdit).text.toString()).toInt()
             var familiaFruta = findViewById<EditText>(R.id.txt_familiaFrutaEdit).text.toString()
 
-            arreglo[idTienda].frutas[idFruta].nombreFruta = nombreFruta
-            arreglo[idTienda].frutas[idFruta].precio = precioFruta
-            arreglo[idTienda].frutas[idFruta].cantidad = cantidadFruta
-            arreglo[idTienda].frutas[idFruta].familiaFruta = familiaFruta
+        actualizarFruta(idTienda, idFruta, nombreFruta, precioFruta, cantidadFruta, familiaFruta)
 
             finish()
 
         }
 
     }
+
+
+    fun consultarFrutaPorId(idTienda: String, idFruta: String){
+        val db = Firebase.firestore
+        val frutasReferencia = db.collection("tiendas").document(idTienda).collection("frutas").document(idFruta)
+        frutasReferencia
+            .get()
+            .addOnSuccessListener {
+                findViewById<TextView>(R.id.tv_nombreFrutaEdit).text = it.data?.get("nombre") as String?
+                findViewById<EditText>(R.id.txt_nombreFrutaEdit).setText(it.data?.get("nombre") as String?)
+                findViewById<EditText>(R.id.txt_precioFrutaEdit).setText((it.data?.get("precio") as Double?).toString())
+                findViewById<EditText>(R.id.txt_cantidadFrutaEdit).setText((it.data?.get("cantidad") as Number?).toString())
+                findViewById<EditText>(R.id.txt_familiaFrutaEdit).setText(it.data?.get("familia") as String?)
+            }
+    }
+
+    fun actualizarFruta(
+        idTienda: String,
+        idFruta: String,
+        nombre : String,
+        precio : Double,
+        cantidad : Number,
+        familia : String,
+        ){
+        var db = Firebase.firestore
+        var frutasReferencia = db.collection("tiendas").document(idTienda).collection("frutas").document(idFruta)
+        frutasReferencia.set(
+            hashMapOf(
+                "nombre" to nombre,
+                "precio" to precio,
+                "cantidad" to cantidad,
+                "familia" to familia,
+            )
+        )
+
+    }
+
 }
